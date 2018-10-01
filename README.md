@@ -1,7 +1,7 @@
 # MAX1704X
 Arduino library for the MAX17043 and MAX17044 LiPo Battery Fuel Gauge. For an example of this device on a breakout board see the [SparkFun LiPo Fuel Gauge](https://www.sparkfun.com/products/10617).
 
-![](https://github.com/porrey/max1704x/blob/master/extras/SparkFunLiPoFuelGauge.jpg)
+![](https://github.com/porrey/max1704x/blob/master/extras/SparkFunLiPoFuelGauge-small.png)
 
 ## Usage ##
 
