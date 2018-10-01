@@ -3,6 +3,8 @@ Arduino library for the MAX17043 and MAX17044 LiPo Battery Fuel Gauge. For an ex
 
 ![](https://github.com/porrey/max1704x/blob/master/extras/SparkFunLiPoFuelGauge-small.png)
 
+This device is also available on breakout boards from [Amazon](https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=max17043&rh=i%3Aaps%2Ck%3Amax17043).
+
 ## Usage ##
 
 The step is to include the library in your sketch. Include MAX17043.h if you are suing the single cell chip or MAX17044.h if you are using the two cell chip.
