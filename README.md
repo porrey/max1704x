@@ -13,14 +13,10 @@ Next, in the **`setup()`** routine call begin on the Fuel Gauge. Initialize the 
 
     void setup()
     {
-      // ***
-      // *** Initialize the serial interface.
-      // ***
+      // Initialize the serial interface.
       Serial.begin(115200);
     
-      // ***
-      // *** Initialize the fuel gauge.
-      // ***
+      // Initialize the fuel gauge.
       FuelGauge.begin();
     }
 
@@ -28,10 +24,8 @@ In the loop, use the properties to show the state of the battery and the fuel ga
 
     void loop()
     {
-      // ***
-      // *** Get the voltage, battery percent
-      // *** and other properties.
-      // ***
+      // Get the voltage, battery percent
+      // and other properties.
       Serial.print("Version:   "); Serial.println(FuelGauge.version());
       Serial.print("ADC:   "); Serial.println(FuelGauge.adc());
       Serial.print("Voltage:   "); Serial.print(FuelGauge.voltage()); Serial.println(" v");
