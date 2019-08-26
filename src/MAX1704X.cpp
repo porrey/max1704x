@@ -1,7 +1,7 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Version 1.0.0 
+ * Version 1.0.1
  * Copyright © 2018 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
@@ -23,9 +23,9 @@
  */
 #include "MAX1704X.h"
 
-MAX1704X::MAX1704X(float maxVoltage)
+MAX1704X::MAX1704X(float voltageIncrement)
 {
-  this->_maxVoltage = maxVoltage;
+  this->_voltageIncrement = voltageIncrement;
 }
 
 void MAX1704X::begin()
@@ -44,9 +44,10 @@ uint16_t MAX1704X::adc()
 float MAX1704X::voltage()
 {
   // ***
-  // *** The MAX1704X is a 12-bit ADC measuring 0 to 5 volts.
+  // *** The MAX1704X has a 12-bit ADC measuring 0 to 5 or 10 Volts in differing
+  // *** increments.
   // ***
-  return (float)(this->adc() / 4096.0 * this->_maxVoltage);
+  return (float)(this->adc() * this->_voltageIncrement);
 }
 
 float MAX1704X::percent()
