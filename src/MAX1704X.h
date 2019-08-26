@@ -1,7 +1,7 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Version 1.0.0 
+ * Version 1.0.1
  * Copyright © 2018 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
@@ -65,7 +65,7 @@ class MAX1704X
     void setThreshold(uint8_t threshold);
 
   protected:
-    float _maxVoltage;
+    float _voltageIncrement;
     uint8_t thresholdToConfig(uint8_t threshold);
     uint8_t configToThreshold(uint8_t config);
     uint16_t readRegister16(uint8_t registerId);
