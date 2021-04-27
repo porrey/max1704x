@@ -1,8 +1,8 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Version 1.0.1
- * Copyright © 2018 Daniel Porrey. All Rights Reserved.
+ * Version 1.1.0
+ * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
  * This file is part of the MAX1704X Arduino Library.
@@ -48,6 +48,11 @@ class MAX1704X
   public:
     MAX1704X(float);
     void begin();
+    void begin(bool);
+    void begin(TwoWire &wire);
+#if defined(ESP8266)
+    void begin(int sda, int scl);
+#endif
     uint16_t adc();
     float voltage();
     float percent();
@@ -65,6 +70,7 @@ class MAX1704X
     void setThreshold(uint8_t threshold);
 
   protected:
+    TwoWire *_wire;
     float _voltageIncrement;
     uint8_t thresholdToConfig(uint8_t threshold);
     uint8_t configToThreshold(uint8_t config);

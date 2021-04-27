@@ -1,8 +1,8 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Version 1.0.1
- * Copyright © 2018 Daniel Porrey. All Rights Reserved.
+ * Version 1.1.0
+ * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
  * This file is part of the MAX1704X Arduino Library.
@@ -28,10 +28,10 @@
 
 extern MAX1704X FuelGauge;
 
-// ***
-// *** The MAX17044 is a two-cell device with a
-// *** a voltage measurement range of 0 to 10 V in 2.50 mV increments.
-// ***
+//
+// The MAX17044 is a two-cell device with a
+// a voltage measurement range of 0 to 10 V in 2.50 mV increments.
+//
 MAX1704X FuelGauge = MAX1704X(2.50);
 
 #endif
