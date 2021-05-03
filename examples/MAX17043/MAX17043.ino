@@ -1,8 +1,8 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Version 1.0.0 
- * Copyright © 2018 Daniel Porrey. All Rights Reserved.
+ * Version 1.1.0 
+ * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
  * This file is part of the MAX1704X Arduino Library.
@@ -35,19 +35,33 @@
 
 void setup()
 {
-  // ***
-  // *** Initialize the serial interface.
-  // ***
+  //
+  // Initialize the serial interface.
+  //
   Serial.begin(115200);
 
-  // ***
-  // *** Initialize the fuel gauge.
-  // ***
+  //
+  // Wait for serial port to connect.
+  //
+  while (!Serial) {}
+  Serial.println("Serial port initialized.\n");
+  
+  //
+  // Initialize the fuel gauge.
+  //
   FuelGauge.begin();
 
-  // ***
-  // *** Display an initial reading.
-  // ***
+  //
+  // Other ways to initialize:
+  //
+  // begin(bool initializeWire)
+  // begin(bool initializeWire, uint32_t address)
+  // begin(int sda, int scl)          [esp only]
+  // begin(int sda, int scl, uint8_t) [esp only]
+
+  //
+  // Display an initial reading.
+  //
   displayReading();
   Serial.println();
   displayMenu();
@@ -55,15 +69,12 @@ void setup()
 
 void loop()
 {
-  Serial.println("Enter an option in the serial input (M for menu):");
-
   while (Serial.available() == 0)
   {
     delay(25);
   }
 
   char c = Serial.read();
-  Serial.println();
 
   switch (c)
   {
@@ -95,12 +106,11 @@ void loop()
       decrementThreshold();
       break;
   }
-
-  Serial.println();
 }
 
 void displayMenu()
 {
+  Serial.println("Enter an option in the serial input (M for menu):");
   Serial.println("D => Display a reading.");
   Serial.println("S => Enter sleep mode.");
   Serial.println("W => Wake.");
@@ -109,22 +119,27 @@ void displayMenu()
   Serial.println("R => Reset.");
   Serial.println("+ => Increment threshold.");
   Serial.println("- => Decrement threshold.");
+  Serial.println();
 }
 
 void displayReading()
 {
-  // ***
-  // *** Get the voltage, battery percent
-  // *** and other properties.
-  // ***
+  //
+  // Get the voltage, battery percent
+  // and other properties.
+  //
+
+  Serial.println("Device Reading:");
+  Serial.print("Address:       0x"); Serial.println(FuelGauge.address(), HEX);
   Serial.print("Version:       "); Serial.println(FuelGauge.version());
   Serial.print("ADC:           "); Serial.println(FuelGauge.adc());
-  Serial.print("Voltage:       "); Serial.print(FuelGauge.voltage()); Serial.println(" v");
+  Serial.print("Voltage:       "); Serial.print(FuelGauge.voltage()); Serial.println(" mV");
   Serial.print("Percent:       "); Serial.print(FuelGauge.percent()); Serial.println("%");
   Serial.print("Is Sleeping:   "); Serial.println(FuelGauge.isSleeping() ? "Yes" : "No");
   Serial.print("Alert:         "); Serial.println(FuelGauge.alertIsActive() ? "Yes" : "No");
   Serial.print("Threshold:     "); Serial.println(FuelGauge.getThreshold());
   Serial.print("Compensation:  0x"); Serial.println(FuelGauge.compensation(), HEX);
+  Serial.println();
 }
 
 void sleepMode()
