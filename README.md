@@ -29,7 +29,7 @@ In the loop, use the properties to show the state of the battery and the fuel ga
       // and other properties.
       Serial.print("Version:   "); Serial.println(FuelGauge.version());
       Serial.print("ADC:   "); Serial.println(FuelGauge.adc());
-      Serial.print("Voltage:   "); Serial.print(FuelGauge.voltage()); Serial.println(" v");
+      Serial.print("Voltage:   "); Serial.print(FuelGauge.voltage()); Serial.println(" mV");
       Serial.print("Percent:   "); Serial.print(FuelGauge.percent()); Serial.println("%");
       Serial.print("Is Sleeping:   "); Serial.println(FuelGauge.isSleeping() ? "Yes" : "No");
       Serial.print("Alert: "); Serial.println(FuelGauge.alertIsActive() ? "Yes" : "No");
