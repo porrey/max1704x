@@ -38,11 +38,11 @@ In the loop, use the properties to show the state of the battery and the fuel ga
     }
 
 ## Sleep Mode ##
-Holding both SDA and SCL logic-low forces the MAX17043/MAX17044 into Sleep mode. While in Sleep mode, all IC operations are halted and power drain of the IC is greatly reduced. After exiting Sleep mode, fuel-gauge operation continues from the point it was halted. SDA and SCL must be held low for at least 2.5s to guarantee transition into Sleep mode. Afterwards, a rising edge on either SDA or SCL immediately transitions the IC out of Sleep mode. 
+While in Sleep mode, all IC operations are halted and power drain of the IC is greatly reduced. After exiting Sleep mode, fuel-gauge operation continues from the point it was halted.
+
+Sleep mode can be entered by calling the **`sleep()`** method to put the device into sleep mode via software and the **`wake()`** method to take it out of sleep mode. The **`isSleeping()`** method can be used to get the current state of device.
 
 > Entering Sleep mode does not clear the interrupt.
-
-Alternatively, Sleep mode can be calling the **`sleep()`** method to put the device into sleep mode via software and the **`wake()`** method to take it out of sleep mode. The **`isSleeping()`** method can be used to get the current state of device.
 
 ### Entering Seep Mode ###
 The sample code below demonstrates how to check if the device is in sleep mode and then puts it in sleep mode if it is not.
