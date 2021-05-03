@@ -137,7 +137,7 @@ void displayReading()
   Serial.print("Percent:       "); Serial.print(FuelGauge.percent()); Serial.println("%");
   Serial.print("Is Sleeping:   "); Serial.println(FuelGauge.isSleeping() ? "Yes" : "No");
   Serial.print("Alert:         "); Serial.println(FuelGauge.alertIsActive() ? "Yes" : "No");
-  Serial.print("Threshold:     "); Serial.println(FuelGauge.getThreshold());
+  Serial.print("Threshold:     "); Serial.print(FuelGauge.getThreshold()); Serial.println("%");
   Serial.print("Compensation:  0x"); Serial.println(FuelGauge.compensation(), HEX);
   Serial.println();
 }
