@@ -50,7 +50,7 @@ class MAX1704X
     void begin();
     void begin(bool);
     void begin(bool, uint8_t);
-#if defined(ESP8266)
+#if defined(ESP8266) || defined(ESP32)
     void begin(int sda, int scl);
     void begin(int sda, int scl, uint8_t);
 #endif

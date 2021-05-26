@@ -30,12 +30,14 @@ MAX1704X::MAX1704X(float voltageIncrement)
 
 void MAX1704X::begin()
 {
-  this->begin(true, I2C_DEFAULT_ADDRESS);
+  this->_address = I2C_DEFAULT_ADDRESS;
+  this->begin(true, this->_address);
 }
 
 void MAX1704X::begin(bool initializeWire)
 {
-  this->begin(initializeWire, I2C_DEFAULT_ADDRESS);
+  this->_address = I2C_DEFAULT_ADDRESS;
+  this->begin(initializeWire, this->_address);
 }
 
 void MAX1704X::begin(bool initializeWire, uint8_t address)
@@ -130,6 +132,7 @@ bool MAX1704X::sleep()
   uint16_t value = this->readRegister16(REGISTER_CONFIG);
   setBit(value, 7);
   this->writeRegister16(REGISTER_CONFIG, value);
+  return this->isSleeping();
 }
 
 bool MAX1704X::isSleeping()
@@ -146,6 +149,7 @@ bool MAX1704X::wake()
   uint16_t value = this->readRegister16(REGISTER_CONFIG);
   clearBit(value, 7);
   this->writeRegister16(REGISTER_CONFIG, value);
+  return !this->isSleeping();
 }
 
 void MAX1704X::reset()
