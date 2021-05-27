@@ -51,7 +51,7 @@ void MAX1704X::begin(bool initializeWire, uint8_t address)
   }
 }
 
-#if defined(ESP8266)
+#if defined(ESP8266) || defined(ESP32)
 void MAX1704X::begin(int sda, int scl)
 {
   Wire.begin(sda, scl);
