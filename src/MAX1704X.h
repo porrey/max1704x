@@ -50,9 +50,9 @@ class MAX1704X
     void begin();
     void begin(bool);
     void begin(bool, uint8_t);
-#if defined(ESP8266)
-    void begin(int sda, int scl);
-    void begin(int sda, int scl, uint8_t);
+#if defined(ESP8266) || defined(ESP32)
+    void begin(int, int);
+    void begin(int, int, uint8_t);
 #endif
     uint8_t address();
     uint16_t adc();
@@ -60,7 +60,7 @@ class MAX1704X
     float percent();
     uint16_t version();
     uint8_t compensation();
-    void compensation(uint8_t data);
+    void compensation(uint8_t);
     bool sleep();
     bool isSleeping();
     bool wake();
@@ -69,16 +69,16 @@ class MAX1704X
     bool alertIsActive();
     void clearAlert();
     uint8_t getThreshold();
-    void setThreshold(uint8_t threshold);
+    void setThreshold(uint8_t);
 
   protected:
     TwoWire *_wire;
     uint8_t _address;
     float _voltageIncrement;
-    uint8_t thresholdToConfig(uint8_t threshold);
-    uint8_t configToThreshold(uint8_t config);
-    uint16_t readRegister16(uint8_t registerId);
-    void writeRegisterId(uint8_t registerId);
-    void writeRegister16(uint8_t registerId, uint16_t data);
+    uint8_t thresholdToConfig(uint8_t);
+    uint8_t configToThreshold(uint8_t);
+    uint16_t readRegister16(uint8_t);
+    void writeRegisterId(uint8_t);
+    void writeRegister16(uint8_t, uint16_t);
 };
 #endif
