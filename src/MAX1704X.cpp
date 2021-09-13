@@ -1,26 +1,25 @@
 /*
-   MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
-
-   Version 1.1.0
-   Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
-   https://github.com/porrey/max1704x
-
-   This file is part of the MAX1704X Arduino Library.
-
-   The MAX1704X Arduino Library is free software: you can redistribute
-   it and/or modify it under the terms of the GNU General Public License
-   as published by the Free Software Foundation, either version 3 of the
-   License, or (at your option) any later version.
-
-   The MAX1704X Arduino Library is distributed in the hope that it
-   will be useful, but WITHOUT ANY WARRANTY; without even the implied
-   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
-   the GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with the MAX1704X Arduino Library. If not,
-   see http://www.gnu.org/licenses/.
-*/
+ * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
+ *
+ * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
+ * https://github.com/porrey/max1704x
+ *
+ * This file is part of the MAX1704X Arduino Library.
+ * 
+ * The MAX1704X Arduino Library is free software: you can redistribute
+ * it and/or modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * The MAX1704X Arduino Library is distributed in the hope that it
+ * will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+ * the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with the MAX1704X Arduino Library. If not, 
+ * see http://www.gnu.org/licenses/.
+ */
 #include "MAX1704X.h"
 
 MAX1704X::MAX1704X(float voltageIncrement)
@@ -28,41 +27,52 @@ MAX1704X::MAX1704X(float voltageIncrement)
   this->_voltageIncrement = voltageIncrement;
 }
 
-void MAX1704X::begin()
+bool MAX1704X::begin()
 {
   this->_address = I2C_DEFAULT_ADDRESS;
-  this->begin(true, this->_address);
+  return this->begin(true, this->_address);
 }
 
-void MAX1704X::begin(bool initializeWire)
+bool MAX1704X::begin(bool initializeWire)
 {
   this->_address = I2C_DEFAULT_ADDRESS;
-  this->begin(initializeWire, this->_address);
+  return this->begin(initializeWire, this->_address);
 }
 
-void MAX1704X::begin(bool initializeWire, uint8_t address)
+bool MAX1704X::begin(bool initializeWire, uint8_t address)
 {
+  bool returnValue = false;
+
   this->_address = address;
 
   if (initializeWire)
   {
-    Wire.begin();
     this->_wire = &Wire;
+    this->_wire->begin();
+    returnValue = this->deviceFound();
   }
+  else
+  {
+    returnValue = true;
+  }
+
+  return returnValue;
 }
 
 #if defined(ESP8266) || defined(ESP32)
-void MAX1704X::begin(int sda, int scl)
+bool MAX1704X::begin(int sda, int scl)
 {
-  Wire.begin(sda, scl);
   this->_wire = &Wire;
+  this->_wire->begin(sda, scl);
+  returnValue = this->deviceFound();
 }
 
-void MAX1704X::begin(int sda, int scl, uint8_t address)
+bool MAX1704X::begin(int sda, int scl, uint8_t address)
 {
   this->_address = address;
-  Wire.begin(sda, scl);
   this->_wire = &Wire;
+  this->_wire->begin(sda, scl);
+  returnValue = this->deviceFound();
 }
 #endif
 
@@ -73,10 +83,15 @@ uint8_t MAX1704X::address()
 
 uint16_t MAX1704X::adc()
 {
+  uint16_t returnValue = 0;
+
   //
-  // 12-bit ADC; remove the 4 MSB's
+  // 12-bit ADC; Shift the result since the 4 LSB's are not used.
   //
-  return (uint16_t)(this->readRegister16(REGISTER_VCELL) >> 4);
+  uint16_t registerValue = this->readRegister16(REGISTER_VCELL);
+  returnValue = registerValue  >> 4;
+
+  return returnValue;
 }
 
 float MAX1704X::voltage()
@@ -93,17 +108,17 @@ float MAX1704X::percent()
   //
   // Read the 16-bit register value
   //
-  uint16_t value = this->readRegister16(REGISTER_SOC);
+  uint16_t registerValue = this->readRegister16(REGISTER_SOC);
 
   //
   // The high byte is the percentage.
   //
-  float percentage = (float)toHighByte(value);
+  float percentage = (float)toHighByte(registerValue);
 
   //
   // The low byte contains additional resolution of 1/256%.
   //
-  float fraction = (float)(toLowByte(value) / 256.f);
+  float fraction = (float)(toLowByte(registerValue) / 256.f);
 
   return percentage + fraction;
 }
@@ -155,17 +170,17 @@ bool MAX1704X::wake()
 void MAX1704X::reset()
 {
   //
-  // Write the command 0x5400 to the command register.
+  // Write RESET_COMMAND to the command register.
   //
-  this->writeRegister16(REGISTER_COMMAND, 0x5400);
+  this->writeRegister16(REGISTER_COMMAND, RESET_COMMAND);
 }
 
 void MAX1704X::quickstart()
 {
   //
-  // Write the command 0x4000 to the mode register.
+  // Write QUICKSTART_MODE to the mode register.
   //
-  this->writeRegister16(REGISTER_MODE, 0x4000);
+  this->writeRegister16(REGISTER_MODE, QUICKSTART_MODE);
 }
 
 bool MAX1704X::alertIsActive()
@@ -267,4 +282,19 @@ void MAX1704X::writeRegister16(uint8_t registerId, uint16_t data)
   this->_wire->write(toHighByte(data));
   this->_wire->write(toLowByte(data));
   this->_wire->endTransmission(true);
+}
+
+bool MAX1704X::deviceFound()
+{
+  bool returnValue = false;
+
+  this->_wire->beginTransmission(this->_address);
+  byte error = this->_wire->endTransmission(true);
+
+  if (error == 0)
+  {
+    returnValue = true;
+  }
+
+  return returnValue;
 }

@@ -1,26 +1,26 @@
 /*
- * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
- *
- * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
- * https://github.com/porrey/max1704x
- *
- * This file is part of the MAX1704X Arduino Library.
- * 
- * The MAX1704X Arduino Library is free software: you can redistribute
- * it and/or modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
- * 
- * The MAX1704X Arduino Library is distributed in the hope that it
- * will be useful, but WITHOUT ANY WARRANTY; without even the implied
- * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
- * the GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with the MAX1704X Arduino Library. If not, 
- * see http://www.gnu.org/licenses/.
- */
-#include "MAX17043.h"
+   MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
+
+   Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
+   https://github.com/porrey/max1704x
+
+   This file is part of the MAX1704X Arduino Library.
+
+   The MAX1704X Arduino Library is free software: you can redistribute
+   it and/or modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation, either version 3 of the
+   License, or (at your option) any later version.
+
+   The MAX1704X Arduino Library is distributed in the hope that it
+   will be useful, but WITHOUT ANY WARRANTY; without even the implied
+   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+   the GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with the MAX1704X Arduino Library. If not,
+   see http://www.gnu.org/licenses/.
+*/
+#include "MAX1704X.h"
 
 // ***
 // *** Connections:
@@ -31,6 +31,8 @@
 // *** For other devices lookup the correct i2C
 // *** (SDA and SCL) pins.
 // ***
+
+MAX1704X FuelGauge = MAX1704X(1.25);
 
 void setup()
 {
@@ -48,21 +50,21 @@ void setup()
   //
   // Initialize the fuel gauge.
   //
-  if (FuelGauge.begin()
+  if (FuelGauge.begin(true, 0x32))
   {
-    Serial.println("The MAX17043 device was found.\n");
+    Serial.println("The MAX1704X device was found.\n");
     FuelGauge.quickstart();
   } else
   {
-    Serial.println("The MAX17043 device was NOT found.\n");
+    Serial.println("The MAX1704X device was NOT found.\n");
     while (true);
   }
 
   //
   // Other ways to initialize:
   //
+  // begin()
   // begin(bool initializeWire)
-  // begin(bool initializeWire, uint32_t address)
   // begin(int sda, int scl)          [esp only]
   // begin(int sda, int scl, uint8_t) [esp only]
 
@@ -104,6 +106,8 @@ void loop()
     case 'Q':
     case 'q':
       quickStart();
+      delay(500);
+      displayReading();
       break;
     case 'C':
     case 'c':

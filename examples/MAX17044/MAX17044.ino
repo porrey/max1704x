@@ -1,7 +1,6 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Version 1.1.0 
  * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
@@ -45,11 +44,19 @@ void setup()
   //
   while (!Serial) {}
   Serial.println("Serial port initialized.\n");
-  
+
   //
   // Initialize the fuel gauge.
   //
-  FuelGauge.begin();
+  if (FuelGauge.begin()
+  {
+    Serial.println("The MAX17044 device was found.\n");
+    FuelGauge.quickstart();
+  } else
+  {
+    Serial.println("The MAX17044 device was NOT found.\n");
+    while (true);
+  }
 
   //
   // Other ways to initialize:
@@ -79,24 +86,31 @@ void loop()
   switch (c)
   {
     case 'M':
+    case 'm':
       displayMenu();
       break;
     case 'D':
+    case 'd':
       displayReading();
       break;
     case 'S':
+    case 's':
       sleepMode();
       break;
     case 'W':
+    case 'w':
       wakeMode();
       break;
     case 'Q':
+    case 'q':
       quickStart();
       break;
     case 'C':
+    case 'c':
       clearAlert();
       break;
     case 'R':
+    case 'r':
       reset();
       break;
     case '+':

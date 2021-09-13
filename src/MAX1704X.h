@@ -1,7 +1,6 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Version 1.1.0
  * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
@@ -36,6 +35,7 @@
 #define toggleBit(byte, bit)      (byte ^= BV(bit))
 
 #define I2C_DEFAULT_ADDRESS 0x36
+
 #define REGISTER_VCELL      0x02
 #define REGISTER_SOC        0x04
 #define REGISTER_MODE       0x06
@@ -43,16 +43,19 @@
 #define REGISTER_CONFIG     0x0C
 #define REGISTER_COMMAND    0xFE
 
+#define RESET_COMMAND       0x5400
+#define QUICKSTART_MODE     0x4000
+
 class MAX1704X
 {
   public:
     MAX1704X(float);
-    void begin();
-    void begin(bool);
-    void begin(bool, uint8_t);
+    bool begin();
+    bool begin(bool);
+    bool begin(bool, uint8_t);
 #if defined(ESP8266) || defined(ESP32)
-    void begin(int, int);
-    void begin(int, int, uint8_t);
+    bool begin(int, int);
+    bool begin(int, int, uint8_t);
 #endif
     uint8_t address();
     uint16_t adc();
@@ -70,7 +73,8 @@ class MAX1704X
     void clearAlert();
     uint8_t getThreshold();
     void setThreshold(uint8_t);
-
+    bool deviceFound();
+    
   protected:
     TwoWire *_wire;
     uint8_t _address;

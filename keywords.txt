@@ -13,6 +13,8 @@ MAX1704X	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
+begin	KEYWORD2
+address	KEYWORD2
 adc	KEYWORD2
 voltage	KEYWORD2
 percent	KEYWORD2
@@ -27,6 +29,7 @@ alertIsActive	KEYWORD2
 clearAlert	KEYWORD2
 getThreshold	KEYWORD2
 setThreshold	KEYWORD2
+deviceFound	KEYWORD2
 
 ######################################
 # Constants (LITERAL1)
@@ -38,3 +41,5 @@ REGISTER_MODE	LITERAL1
 REGISTER_VERSION	LITERAL1
 REGISTER_CONFIG	LITERAL1
 REGISTER_COMMAND	LITERAL1
+RESET_COMMAND	LITERAL1
+QUICKSTART_MODE	LITERAL1
