@@ -43,6 +43,8 @@ In the loop, use the properties to show the state of the battery and the fuel ga
       Serial.print("Alert: "); Serial.println(FuelGauge.alertIsActive() ? "Yes" : "No");
       Serial.print("Threshold: "); Serial.println(FuelGauge.getThreshold());
       Serial.print("Compensation:  0x"); Serial.println(FuelGauge.compensation(), HEX);
+      
+      delay(1000);
     }
 
 ## Initialize With a Different Address ##
