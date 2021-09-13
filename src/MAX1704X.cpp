@@ -64,7 +64,7 @@ bool MAX1704X::begin(int sda, int scl)
 {
   this->_wire = &Wire;
   this->_wire->begin(sda, scl);
-  returnValue = this->deviceFound();
+  return this->deviceFound();
 }
 
 bool MAX1704X::begin(int sda, int scl, uint8_t address)
@@ -72,7 +72,7 @@ bool MAX1704X::begin(int sda, int scl, uint8_t address)
   this->_address = address;
   this->_wire = &Wire;
   this->_wire->begin(sda, scl);
-  returnValue = this->deviceFound();
+  return this->deviceFound();
 }
 #endif
 

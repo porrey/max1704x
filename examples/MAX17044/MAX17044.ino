@@ -48,7 +48,7 @@ void setup()
   //
   // Initialize the fuel gauge.
   //
-  if (FuelGauge.begin()
+  if (FuelGauge.begin())
   {
     Serial.println("The MAX17044 device was found.\n");
     FuelGauge.quickstart();
