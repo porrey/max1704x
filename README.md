@@ -6,19 +6,27 @@ Arduino library for the MAX17043 and MAX17044 LiPo Battery Fuel Gauge. For an ex
 This device is also available on breakout boards from [Amazon](https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=max17043&rh=i%3Aaps%2Ck%3Amax17043). Be cautious when ordering these from unknown suppliers. I have read on various forums that some of these do not work properly. I recommend ordering from SparkFun.
 
 ## Usage ##
-The step is to include the library in your sketch. Include MAX17043.h if you are suing the single cell chip or MAX17044.h if you are using the two cell chip.
+The first step is to include the library in your sketch. Include MAX17043.h if you are using the single cell chip or MAX17044.h if you are using the two cell chip.
     
     #include "MAX17043.h"
 
-Next, in the **`setup()`** routine call begin on the Fuel Gauge. Initialize the Serial interface to display the device properties to the serial output.
+Next, in the **`setup()`** routine, initialize the Serial interface to display the device properties to the serial output and call begin on the Fuel Gauge.
 
     void setup()
     {
       // Initialize the serial interface.
       Serial.begin(115200);
-    
-      // Initialize the fuel gauge.
-      FuelGauge.begin();
+      
+	  // Initialize the fuel gauge.
+	  if (FuelGauge.begin()
+	  {
+	    Serial.println("The MAX17043 device was found.\n");
+	    FuelGauge.quickstart();
+	  } else
+	  {
+	    Serial.println("The MAX17043 device was NOT found.\n");
+	    while (true);
+	  }
     }
 
 In the loop, use the properties to show the state of the battery and the fuel gauge.
@@ -35,6 +43,34 @@ In the loop, use the properties to show the state of the battery and the fuel ga
       Serial.print("Alert: "); Serial.println(FuelGauge.alertIsActive() ? "Yes" : "No");
       Serial.print("Threshold: "); Serial.println(FuelGauge.getThreshold());
       Serial.print("Compensation:  0x"); Serial.println(FuelGauge.compensation(), HEX);
+    }
+
+## Initialize With a Different Address ##
+Include MAX1704X.h for both the MAX17043 and MAX17044 chips.
+    
+    #include "MAX1704X.h"
+
+Add this statement to define the fule gauge instance. Specify 1.25 for the MAX17043 and 2.50 for the MAX17044.
+
+	MAX1704X FuelGauge = MAX1704X(1.25);
+
+In the **`setup()`** routine, initialize the Serial interface to display the device properties to the serial output and call begin on the Fuel Gauge passing true to tell it to initalize the i2c bus and then the address of the device (0x32 in this example).
+
+    void setup()
+    {
+      // Initialize the serial interface.
+      Serial.begin(115200);
+      
+	  // Initialize the fuel gauge.
+	  if (FuelGauge.begin(true, 0x32))
+	  {
+	    Serial.println("The MAX1704X device was found.\n");
+	    FuelGauge.quickstart();
+	  } else
+	  {
+	    Serial.println("The MAX1704X device was NOT found.\n");
+	    while (true);
+	  }
     }
 
 ## Sleep Mode ##
@@ -120,4 +156,4 @@ The **`getThreshold()`** and **`setThresold()`** methods can be used to get the 
     uint8_t threshold = FuelGauge.getThreshold();
     FuelGauge.setThreshold(--threshold);
 
-Portions of this document are taken directly from the Maxim data-sheet for the MAX17043/MAX17044. To see the full details the data sheet can be found at [https://datasheets.maximintegrated.com/en/ds/MAX17043-MAX17044.pdf](https://datasheets.maximintegrated.com/en/ds/MAX17043-MAX17044.pdf).
+Portions of this document are taken directly from the Maxim datasheet for the MAX17043/MAX17044. To see the full details the data sheet can be found at [https://datasheets.maximintegrated.com/en/ds/MAX17043-MAX17044.pdf](https://datasheets.maximintegrated.com/en/ds/MAX17043-MAX17044.pdf).
