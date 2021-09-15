@@ -6,7 +6,7 @@ Arduino library for the MAX17043 and MAX17044 LiPo Battery Fuel Gauge. For an ex
 This device is also available on breakout boards from [Amazon](https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=max17043&rh=i%3Aaps%2Ck%3Amax17043). Be cautious when ordering these from unknown suppliers. I have read on various forums that some of these do not work properly. I recommend ordering from SparkFun.
 
 ## Usage ##
-The first step is to include the library in your sketch. Include MAX17043.h if you are using the single cell chip or MAX17044.h if you are using the two cell chip.
+The first step is to include the library in your sketch. Include MAX17043.h if you are using the single cell chip or MAX17044.h if you are using the two-cell chip.
     
     #include "MAX17043.h"
 
@@ -52,11 +52,11 @@ Include MAX1704X.h for both the MAX17043 and MAX17044 chips.
     
     #include "MAX1704X.h"
 
-Add this statement to define the fule gauge instance. Specify 1.25 for the MAX17043 and 2.50 for the MAX17044.
+Add this statement to define the fuel gauge instance. Specify 1.25 for the MAX17043 and 2.50 for the MAX17044.
 
 	MAX1704X FuelGauge = MAX1704X(1.25);
 
-In the **`setup()`** routine, initialize the Serial interface to display the device properties to the serial output and call begin on the Fuel Gauge passing true to tell it to initalize the i2c bus and then the address of the device (0x32 in this example).
+In the **`setup()`** routine, initialize the Serial interface to display the device properties to the serial output and call begin on the Fuel Gauge passing true to tell it to initialize the i2c bus and then the address of the device (0x32 in this example).
 
     void setup()
     {
@@ -76,7 +76,7 @@ In the **`setup()`** routine, initialize the Serial interface to display the dev
     }
 
 ## Sleep Mode ##
-While in Sleep mode, all IC operations are halted and power drain of the IC is greatly reduced. After exiting Sleep mode, fuel-gauge operation continues from the point it was halted.
+While in Sleep mode, all IC operations are halted, and power drain of the IC is greatly reduced. After exiting Sleep mode, fuel-gauge operation continues from the point it was halted.
 
 Sleep mode can be entered by calling the **`sleep()`** method to put the device into sleep mode via software and the **`wake()`** method to take it out of sleep mode. The **`isSleeping()`** method can be used to get the current state of device.
 
