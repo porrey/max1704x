@@ -18,7 +18,7 @@ Next, in the **`setup()`** routine, initialize the Serial interface to display t
       Serial.begin(115200);
       
 	  // Initialize the fuel gauge.
-	  if (FuelGauge.begin()
+	  if (FuelGauge.begin())
 	  {
 	    Serial.println("The MAX17043 device was found.\n");
 	    FuelGauge.quickstart();
