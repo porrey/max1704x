@@ -1,25 +1,25 @@
 /*
- * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
- *
- * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
- * https://github.com/porrey/max1704x
- *
- * This file is part of the MAX1704X Arduino Library.
- * 
- * The MAX1704X Arduino Library is free software: you can redistribute
- * it and/or modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
- * 
- * The MAX1704X Arduino Library is distributed in the hope that it
- * will be useful, but WITHOUT ANY WARRANTY; without even the implied
- * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
- * the GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with the MAX1704X Arduino Library. If not, 
- * see http://www.gnu.org/licenses/.
- */
+   MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
+
+   Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
+   https://github.com/porrey/max1704x
+
+   This file is part of the MAX1704X Arduino Library.
+
+   The MAX1704X Arduino Library is free software: you can redistribute
+   it and/or modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation, either version 3 of the
+   License, or (at your option) any later version.
+
+   The MAX1704X Arduino Library is distributed in the hope that it
+   will be useful, but WITHOUT ANY WARRANTY; without even the implied
+   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+   the GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with the MAX1704X Arduino Library. If not,
+   see http://www.gnu.org/licenses/.
+*/
 #include "MAX1704X.h"
 
 MAX1704X::MAX1704X(float voltageIncrement)
@@ -57,6 +57,24 @@ bool MAX1704X::begin(bool initializeWire, uint8_t address)
   }
 
   return returnValue;
+}
+
+bool MAX1704X::begin(TwoWire* wire)
+{
+  this->_wire = wire;
+  return this->begin();
+}
+
+bool MAX1704X::begin(TwoWire* wire, uint8_t address)
+{
+  this->_wire = wire;
+  return this->begin(address);
+}
+
+bool MAX1704X::begin(TwoWire* wire, bool initializeWire, uint8_t address)
+{
+  this->_wire = wire;
+  return this->begin(initializeWire, address);
 }
 
 #if defined(ESP8266) || defined(ESP32)

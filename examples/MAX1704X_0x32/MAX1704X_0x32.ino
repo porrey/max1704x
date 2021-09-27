@@ -67,6 +67,9 @@ void setup()
   // begin(bool initializeWire)
   // begin(int sda, int scl)          [esp only]
   // begin(int sda, int scl, uint8_t) [esp only]
+  // bool begin(TwoWire* wire); [pass &Wire or &Wire1 for example]
+  // bool begin(TwoWire* wire, uint8_t address);
+  // bool begin(TwoWire* wire, bool initializeWire, uint8_t address);
 
   //
   // Display an initial reading.

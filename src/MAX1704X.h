@@ -53,6 +53,9 @@ class MAX1704X
     bool begin();
     bool begin(bool);
     bool begin(bool, uint8_t);
+    bool begin(TwoWire*);
+    bool begin(TwoWire*, uint8_t);
+    bool begin(TwoWire*, bool, uint8_t);
 #if defined(ESP8266) || defined(ESP32)
     bool begin(int, int);
     bool begin(int, int, uint8_t);
