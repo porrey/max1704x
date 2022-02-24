@@ -86,24 +86,24 @@ void readDevice()
   uint8_t bc = readRegister8(DEVICE_ADDRESS, 0x0c);
   uint8_t bd = readRegister8(DEVICE_ADDRESS, 0x0d);
 
-  Serial.print("ADDRESS:            0x"); Serial.print(DEVICE_ADDRESS, HEX); Serial.print("\t("); Serial.print(DEVICE_ADDRESS);  Serial.println(")");
-  Serial.print("VCELL HIGH BYTE:    0x"); printHex(b2); Serial.print("\t("); Serial.print(b2);  Serial.println(")");
-  Serial.print("VCELL LOW BYTE:     0x"); printHex(b3); Serial.print("\t("); Serial.print(b3);  Serial.println(")");
-  Serial.print("SOC HIGH BYTE:      0x"); printHex(b4); Serial.print("\t("); Serial.print(b4);  Serial.println(")");
-  Serial.print("SOC LOW BYTE:       0x"); printHex(b5); Serial.print("\t("); Serial.print(b5);  Serial.println(")");
-  Serial.print("MODE LOW BYTE:      0x"); printHex(b6); Serial.print("\t("); Serial.print(b6);  Serial.println(")");
-  Serial.print("MODE LOW BYTE:      0x"); printHex(b7); Serial.print("\t("); Serial.print(b7);  Serial.println(")");
-  Serial.print("VERSION LOW BYTE:   0x"); printHex(b8); Serial.print("\t("); Serial.print(b8);  Serial.println(")");
-  Serial.print("VERSION LOW BYTE:   0x"); printHex(b9); Serial.print("\t("); Serial.print(b9);  Serial.println(")");
-  Serial.print("CONFIG LOW BYTE:    0x"); printHex(bc); Serial.print("\t("); Serial.print(bc);  Serial.println(")");
-  Serial.print("CONFIG LOW BYTE:    0x"); printHex(bd); Serial.print("\t("); Serial.print(bd);  Serial.println(")");
+  Serial.print("ADDRESS...........: 0x"); Serial.print(DEVICE_ADDRESS, HEX); Serial.print("\t("); Serial.print(DEVICE_ADDRESS);  Serial.println(")");
+  Serial.print("VCELL HIGH BYTE...: 0x"); printHex(b2); Serial.print("\t("); Serial.print(b2);  Serial.println(")");
+  Serial.print("VCELL LOW BYTE....: 0x"); printHex(b3); Serial.print("\t("); Serial.print(b3);  Serial.println(")");
+  Serial.print("SOC HIGH BYTE.....: 0x"); printHex(b4); Serial.print("\t("); Serial.print(b4);  Serial.println(")");
+  Serial.print("SOC LOW BYTE......: 0x"); printHex(b5); Serial.print("\t("); Serial.print(b5);  Serial.println(")");
+  Serial.print("MODE LOW BYTE.....: 0x"); printHex(b6); Serial.print("\t("); Serial.print(b6);  Serial.println(")");
+  Serial.print("MODE LOW BYTE.....: 0x"); printHex(b7); Serial.print("\t("); Serial.print(b7);  Serial.println(")");
+  Serial.print("VERSION LOW BYTE..: 0x"); printHex(b8); Serial.print("\t("); Serial.print(b8);  Serial.println(")");
+  Serial.print("VERSION LOW BYTE..: 0x"); printHex(b9); Serial.print("\t("); Serial.print(b9);  Serial.println(")");
+  Serial.print("CONFIG LOW BYTE...: 0x"); printHex(bc); Serial.print("\t("); Serial.print(bc);  Serial.println(")");
+  Serial.print("CONFIG LOW BYTE...: 0x"); printHex(bd); Serial.print("\t("); Serial.print(bd);  Serial.println(")");
 
   uint16_t adc = toUint16(b2, b3) >> 4;
 
   Serial.println();
-  Serial.print("PERCENT:            "); Serial.print(b4 + (b5 / 256.0)); Serial.println("%");
-  Serial.print("ADC:                "); Serial.println(adc);
-  Serial.print("VOLTAGE:            "); Serial.print(adc * 1.25); Serial.println(" mV");
+  Serial.print("PERCENT...........: "); Serial.print(b4 + (b5 / 256.0)); Serial.println("%");
+  Serial.print("ADC...............: "); Serial.println(adc);
+  Serial.print("VOLTAGE...........: "); Serial.print(adc * 1.25); Serial.println(" mV");
 }
 
 void loop()
