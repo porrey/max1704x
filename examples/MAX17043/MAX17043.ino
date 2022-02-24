@@ -1,7 +1,7 @@
 /*
  * MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
  *
- * Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
+ * Copyright © 2018-2022 Daniel Porrey. All Rights Reserved.
  * https://github.com/porrey/max1704x
  *
  * This file is part of the MAX1704X Arduino Library.
@@ -51,7 +51,11 @@ void setup()
   if (FuelGauge.begin())
   {
     Serial.println("The MAX17043 device was found.\n");
+    FuelGauge.reset();
+    delay(250);
+    
     FuelGauge.quickstart();
+    delay(125);
   } else
   {
     Serial.println("The MAX17043 device was NOT found.\n");
