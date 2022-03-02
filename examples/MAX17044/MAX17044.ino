@@ -38,6 +38,7 @@ void setup()
   // Initialize the serial interface.
   //
   Serial.begin(115200);
+  delay(250);
 
   //
   // Wait for serial port to connect.
@@ -51,12 +52,32 @@ void setup()
   if (FuelGauge.begin())
   {
     Serial.println("The MAX17044 device was found.\n");
+
+    //
+    // Reset the device.
+    //
+    Serial.println("Resetting device...");
     FuelGauge.reset();
     delay(250);
 
+    //
+    // Issue a quickstart command and wait
+    // for the device to be ready.
+    //
+    Serial.println("Initiating quickstart mode...");
     FuelGauge.quickstart();
     delay(125);
-  } else
+
+    //
+    // Display an initial reading.
+    //
+    Serial.println("Reading device...");
+    Serial.println();
+    displayReading();
+    Serial.println();
+    displayMenu();
+  }
+  else
   {
     Serial.println("The MAX17044 device was NOT found.\n");
     while (true);
@@ -72,17 +93,13 @@ void setup()
   // bool begin(TwoWire* wire); [pass &Wire or &Wire1 for example]
   // bool begin(TwoWire* wire, uint8_t address);
   // bool begin(TwoWire* wire, bool initializeWire, uint8_t address);
-
-  //
-  // Display an initial reading.
-  //
-  displayReading();
-  Serial.println();
-  displayMenu();
 }
 
 void loop()
 {
+  //
+  // Wait for serial input.
+  //
   while (Serial.available() == 0)
   {
     delay(25);
@@ -149,7 +166,6 @@ void displayReading()
   // Get the voltage, battery percent
   // and other properties.
   //
-
   Serial.println("Device Reading:");
   Serial.print("Address:       0x"); Serial.println(FuelGauge.address(), HEX);
   Serial.print("Version:       "); Serial.println(FuelGauge.version());

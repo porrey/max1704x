@@ -53,11 +53,27 @@ void setup()
   Serial.println("Serial port initialized.\n");
 
   //
-  // Initialize the fuel gauge.
+  // Initialize the fuel gauge without an address.
   //
-  if (_fuelGauge.begin(true, 0x32))
+  Serial.println("Initializing the fuel gauge instance.");
+  _fuelGauge.begin(DEFER_ADDRESS);
+
+  //
+  // Find a connected fuel gauge on the i2c bus.
+  //
+  Serial.println("Searching for device...");
+  uint8_t deviceAddress = _fuelGauge.findFirstDevice();
+
+  //
+  // If a device is NOT found, the address returned will be 0.
+  //
+  if (deviceAddress > 0)
   {
-    Serial.println("The MAX1704X device was found.\n");
+    //
+    // Set the device address.
+    //
+    _fuelGauge.address(deviceAddress);
+    Serial.print("A MAX17043 device was found at address 0x"); Serial.println(_fuelGauge.address(), HEX);
 
     //
     // Reset the device.
@@ -85,20 +101,9 @@ void setup()
   }
   else
   {
-    Serial.println("The MAX1704X device was NOT found.\n");
+    Serial.println("A MAX17043 device was not found!");
     while (true);
   }
-
-  //
-  // Other ways to initialize:
-  //
-  // begin()
-  // begin(bool initializeWire)
-  // begin(int sda, int scl)          [esp only]
-  // begin(int sda, int scl, uint8_t) [esp only]
-  // bool begin(TwoWire* wire); [pass &Wire or &Wire1 for example]
-  // bool begin(TwoWire* wire, uint8_t address);
-  // bool begin(TwoWire* wire, bool initializeWire, uint8_t address);
 }
 
 void loop()
@@ -134,8 +139,6 @@ void loop()
     case 'Q':
     case 'q':
       quickStart();
-      delay(500);
-      displayReading();
       break;
     case 'C':
     case 'c':

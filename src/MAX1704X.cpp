@@ -1,7 +1,7 @@
 /*
    MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
 
-   Copyright © 2018-2021 Daniel Porrey. All Rights Reserved.
+   Copyright © 2018-2022 Daniel Porrey. All Rights Reserved.
    https://github.com/porrey/max1704x
 
    This file is part of the MAX1704X Arduino Library.
@@ -47,9 +47,14 @@ bool MAX1704X::begin(bool initializeWire, uint8_t address)
 
   if (initializeWire)
   {
+    Serial.println("Wire.begin()");
     this->_wire = &Wire;
     this->_wire->begin();
-    returnValue = this->deviceFound();
+
+    if (address > 0)
+    {
+      returnValue = this->deviceFound();
+    }
   }
   else
   {
@@ -57,6 +62,11 @@ bool MAX1704X::begin(bool initializeWire, uint8_t address)
   }
 
   return returnValue;
+}
+
+bool MAX1704X::begin(uint8_t address)
+{
+  this->begin(true, address);
 }
 
 bool MAX1704X::begin(TwoWire* wire)
@@ -99,6 +109,11 @@ uint8_t MAX1704X::address()
   return this->_address;
 }
 
+void MAX1704X::address(uint8_t address)
+{
+  this->_address = address;
+}
+
 uint16_t MAX1704X::adc()
 {
   uint16_t returnValue = 0;
@@ -139,6 +154,12 @@ float MAX1704X::percent()
   float fraction = (float)(toLowByte(registerValue) / 256.f);
 
   return percentage + fraction;
+}
+
+float MAX1704X::percentN()
+{
+  float percent = this->percent();
+  return constrain(percent, 0, 100);
 }
 
 uint16_t MAX1704X::version()
@@ -312,6 +333,45 @@ bool MAX1704X::deviceFound()
   if (error == 0)
   {
     returnValue = true;
+  }
+
+  return returnValue;
+}
+
+uint8_t MAX1704X::findFirstDevice()
+{
+  return this->findFirstDevice(0x03);
+}
+
+//
+// Finds the first MAX1704X device on the bus.
+//
+uint8_t MAX1704X::findFirstDevice(uint16_t expectedVersion)
+{
+  uint8_t returnValue = 0;
+
+  //
+  // Scan for a device on usable addresses.
+  //
+  for (uint8_t currentAddress = 0x08; currentAddress <= 0x77; currentAddress++)
+  {
+    //
+    // Attempt a connection.
+    //
+    this->_wire->beginTransmission(currentAddress);
+    this->_wire->write(REGISTER_VERSION + 1);
+    this->_wire->endTransmission(false);
+    this->_wire->requestFrom(currentAddress, (uint8_t)1);
+    byte version =  this->_wire->read();
+
+    //
+    // Match the retrieved version to the expected version.
+    //
+    if (version == expectedVersion)
+    {
+      returnValue = currentAddress;
+      break;
+    }
   }
 
   return returnValue;
