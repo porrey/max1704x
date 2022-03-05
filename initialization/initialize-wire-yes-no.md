@@ -39,3 +39,5 @@ Performs a basic initialization of the library buts allows you to specify whethe
 	
 ## Notes
 Making a call `FuelGauge.begin(true)` is functionally equivalent to `FuelGauge.begin()`.
+
+The default fuel gauge address used by the library is 0x36 (`I2C_DEFAULT_ADDRESS`).

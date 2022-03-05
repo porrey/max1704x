@@ -32,4 +32,4 @@ None
 	}
 
 ## Notes
-None
+The default fuel gauge address used by the library is 0x36 (`I2C_DEFAULT_ADDRESS`).

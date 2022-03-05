@@ -14,7 +14,7 @@ Custom Wire -
 
 # Custom Wire
 ## Description
-Performs a basic initialization of the library specifying the instance of Wire to use. On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
+Performs an initialization of the library specifying the instance of Wire to use. On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
 
 ## Parameters
 `wire : TwoWire*`
@@ -43,4 +43,4 @@ Performs a basic initialization of the library specifying the instance of Wire t
 	}
   
 ## Notes
-None
+The default fuel gauge address used by the library is 0x36 (`I2C_DEFAULT_ADDRESS`).

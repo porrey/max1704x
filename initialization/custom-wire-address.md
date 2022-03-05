@@ -13,28 +13,36 @@ Custom Wire and Address -
 [Custom Wire, Address and Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/custom-wire-address-initialize-wire-yes-no)
 
 # Custom Wire and Address
-### Description
-Performs a basic initialization of the library buts allows you to specify whether or not a call to `Wire.begin()` is made. If allowed, the default SDA and SCL pins for your board are used.
+## Description
+Performs an initialization of the library specifying the instance of Wire to use and ther address of the fuel gauge. On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
 
 ## Parameters
-`initializeWire : bool`
+`wire : TwoWire*`
+
+`address : uint8_t`
 
 ## Returns
 `successful: bool`
 
 ## Example
-	//
-	// Initialize Wire
-	//
-	Wire.begin();
-	
-	//
-	// Initialize the fuel gauge.
-	//
-	if (FuelGauge.begin(false))
+	#include <Wire.h>
+	#include <MAX1704X.h>
+
+	TwoWire _wire1;
+	MAX1704X _fuelGauge = MAX1704X(MAX17043_mV); 
+
+	void setup()
 	{
-	    Serial.println("Found device.");
+	  Serial.begin(9600);
+	  _wire1.begin();
+	  _fuelGauge.begin(&_wire1, 0x32);
 	}
-	
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
+	}
+  
 ## Notes
-Making a call `FuelGauge.begin(true)` is functionally equivalent to `FuelGauge.begin()`.
+None
