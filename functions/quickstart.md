@@ -23,7 +23,7 @@
 [getThreshold()](https://porrey.github.io/max1704x/functions/percentN) -
 [setThreshold()](https://porrey.github.io/max1704x/functions/percentN)
 
-# Template
+# quickstart()
 ## Description
 
 
