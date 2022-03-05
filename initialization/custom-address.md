@@ -23,14 +23,48 @@ Performs an initialization of the library, using the specified device address, w
 `successful: bool`
 
 ## Example
-	//
-	// Initialize the fuel gauge with a device address
-	// of 0x32.
-	//
-	if (FuelGauge.begin(0x32))
+	#include <MAX17043.h>
+
+	void setup()
 	{
-	    Serial.println("Found device.");
+	  Serial.begin(9600);
+
+	  //
+	  // Initialize the fuel gauge with a device address
+	  // of 0x32.
+	  //
+	  FuelGauge.begin(0x32);
 	}
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
+	}
+
+or
+
+	#include <MAX1704X.h>
+
+	MAX1704X _fuelGauge = MAX1704X(MAX17043_mV); 
+
+	void setup()
+	{
+	  Serial.begin(9600);
+	  
+	  //
+	  // Initialize the fuel gauge with a device address
+	  // of 0x32.
+	  //
+	  _fuelGauge.begin(0x32);
+	}
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
+	}
+
 
 ## Notes
 None

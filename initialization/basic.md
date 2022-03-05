@@ -23,12 +23,36 @@ None
 `successful: bool`
 
 ## Example
-	//
-	// Initialize the fuel gauge.
-	//
-	if (FuelGauge.begin())
+	#include <MAX17043.h>
+
+	void setup()
 	{
-	    Serial.println("Found device.");
+	  Serial.begin(9600);
+	  FuelGauge.begin();
+	}
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
+	}
+
+or
+
+	#include <MAX1704X.h>
+
+	MAX1704X _fuelGauge = MAX1704X(MAX17043_mV); 
+
+	void setup()
+	{
+	  Serial.begin(9600);
+	  _fuelGauge.begin();
+	}
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
 	}
 
 ## Notes

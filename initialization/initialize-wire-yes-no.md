@@ -23,18 +23,54 @@ Performs a basic initialization of the library buts allows you to specify whethe
 `successful: bool`
 
 ## Example
-	//
-	// Initialize Wire
-	//
-	Wire.begin();
-	
-	//
-	// Initialize the fuel gauge but 
-	// do not initialize Wire.
-	//
-	if (FuelGauge.begin(false))
+	#include <MAX17043.h>
+
+	void setup()
 	{
-	    Serial.println("Found device.");
+	  Serial.begin(9600);
+
+	  //
+	  // Initialize Wire.
+	  //
+	  Wire.begin();
+	  
+	  //
+	  // Initialize the fuel gauge.
+	  //
+	  FuelGauge.begin(false);
+	}
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
+	}
+
+or
+
+	#include <MAX1704X.h>
+
+	MAX1704X _fuelGauge = MAX1704X(MAX17043_mV); 
+
+	void setup()
+	{
+	  Serial.begin(9600);
+	  
+	  //
+	  // Initialize Wire.
+	  //
+	  Wire.begin();
+	  
+	  //
+	  // Initialize the fuel gauge.
+	  //
+	  _fuelGauge.begin(false);
+	}
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
 	}
 	
 ## Notes
