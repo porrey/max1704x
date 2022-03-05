@@ -29,7 +29,7 @@ Performs an initialization of the library, using the specified device address, w
 	//
 	if (FuelGauge.begin(0x32))
 	{
-		Serial.println("Found device.");
+	    Serial.println("Found device.");
 	}
 
 ## Notes

@@ -33,7 +33,7 @@ Performs a basic initialization of the library buts allows you to specify whethe
 	//
 	if (FuelGauge.begin(false))
 	{
-		Serial.println("Found device.");
+	    Serial.println("Found device.");
 	}
 	
 ## Notes

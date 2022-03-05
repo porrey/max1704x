@@ -28,7 +28,7 @@ None
 	//
 	if (FuelGauge.begin())
 	{
-		Serial.println("Found device.");
+	    Serial.println("Found device.");
 	}
 
 ## Notes

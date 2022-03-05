@@ -31,7 +31,7 @@ Performs an initialization of the library, using the specified device address, a
 	//
 	if (FuelGauge.begin(true, 0x32))
 	{
-		Serial.println("Found device.");
+	    Serial.println("Found device.");
 	}
 
 or
@@ -47,7 +47,7 @@ or
 	//
 	if (FuelGauge.begin(false, 0x32))
 	{
-		Serial.println("Found device.");
+	    Serial.println("Found device.");
 	}
 
 ## Notes
