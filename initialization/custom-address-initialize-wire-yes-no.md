@@ -18,6 +18,7 @@ Performs an initialization of the library, using the specified device address, a
 
 ## Parameters
 `initializeWire : bool`
+
 `address : uint8_t`
 
 ## Returns
