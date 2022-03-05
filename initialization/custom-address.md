@@ -5,27 +5,28 @@
 
 [Basic Initialization](https://porrey.github.io/max1704x/initialization/basic) -
 [Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/wire-yes-no) -
-[Custom Address](https://porrey.github.io/max1704x/initialization/custom-address) -
+Custom Address -
 [Custom Address and Initialize Yes/No](https://porrey.github.io/max1704x/initialization/custom-address-initialize-yes-no) -
 [Custom Wire](https://porrey.github.io/max1704x/initialization/custom-wire) -
 [Custom Wire and Address](https://porrey.github.io/max1704x/initialization/custom-wire-address) -
 [Custom Wire, Address and Initialize Yes/No](https://porrey.github.io/max1704x/initialization/)
 
-#Basic Initialization
+#Custom Address
 ## Description
-Performs a basic initialization of the library which includes calling `Wire.begin()` using the default SDA and SCL pins for your board.
+Performs an initialization of the library, using the specified device address, which includes calling `Wire.begin()` using the default SDA and SCL pins for your board.
 
 ## Parameters
-None
+`address : uint8_t`
 
 ## Returns
 `successful: bool`
 
 ## Example
 	//
-	// Initialize the fuel gauge.
+	// Initialize the fuel gauge with a device address
+	// of 0x32.
 	//
-	if (FuelGauge.begin())
+	if (FuelGauge.begin(0x32))
 	{
 		Serial.println("Found device.");
 	}
