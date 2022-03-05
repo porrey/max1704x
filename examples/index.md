@@ -5,4 +5,4 @@
 [**Functions**](https://porrey.github.io/max1704x/functions) -
 **Examples**
 # Examples
-* [Basic Example](https://porrey.github.io/max1704x/functions/basic)
+* [Basic Example](https://porrey.github.io/max1704x/examples/basic)
