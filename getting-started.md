@@ -4,6 +4,8 @@
 [**Initialization**](https://porrey.github.io/max1704x/initialization) -
 [**Functions**](https://porrey.github.io/max1704x/functions)
 # Getting Started
+Add the library to your Arduino IDE and then incloude it within your skethc to begin using the fuel gauge.
+
 ## Adding the Library
 In the Arduino IDE, click the **Sketch** menu and choose **Include Library** and then **Manage Libraries...**. In the search box type **MAX1704X**. Highlight the library and clikc the **Install** button.
 ## Include the Library
