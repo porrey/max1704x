@@ -32,10 +32,15 @@ Performs an initialization of the library, using the specified device address, a
 	  Serial.begin(9600);
 
 	  //
+	  // Initialize Wire.
+	  //
+	  Wire.begin();
+	  
+	  //
 	  // Initialize the fuel gauge with a device address
 	  // of 0x32.
 	  //
-	  FuelGauge.begin(true, 0x32);
+	  FuelGauge.begin(false, 0x32);
 	}
 
 	void loop()
