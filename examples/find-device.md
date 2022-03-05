@@ -8,7 +8,7 @@
 
 ## Description
 
-Demonstrates basic usage of the library.
+Demonstrates how to search the i2c bus for a device.
 
 ## Code
 	#include "MAX1704X.h"
