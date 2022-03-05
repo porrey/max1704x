@@ -1,3 +1,7 @@
+[**Home**](https://porrey.github.io/max1704x/home) -
+[**Constructor**](https://porrey.github.io/max1704x/constructor) - 
+[**Initialization**](https://porrey.github.io/max1704x/initialization) - 
+[**Functions**](https://porrey.github.io/max1704x/functions)
 # Initialization
 ## Standard Boards
 bool begin();

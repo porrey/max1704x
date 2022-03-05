@@ -1,3 +1,6 @@
+[**Constructor**](https://porrey.github.io/max1704x/constructor) - 
+[**Initialization**](https://porrey.github.io/max1704x/initialization) - 
+[**Functions**](https://porrey.github.io/max1704x/functions)
 # MAX1704X Library
 Arduino library for MAX17043/MAX17044 lithium ion battery fuel gauge.
 
@@ -26,5 +29,3 @@ If you are wish to initalize the library yourself, then add the line shonw below
 `#include "MAX1704X.h"`
 
 Additionally, you will need to call the constructor on the class to create an instance.
-
-[Constructor](https://porrey.github.io/max1704x/constructor)
