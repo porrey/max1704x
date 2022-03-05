@@ -14,7 +14,9 @@ Custom Wire and Address -
 
 # Custom Wire and Address
 ## Description
-Performs an initialization of the library specifying the instance of Wire to use and ther address of the fuel gauge. On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
+Performs an initialization of the library specifying the instance of Wire to use and ther address of the fuel gauge.
+
+On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
 
 ## Parameters
 `wire : TwoWire*`

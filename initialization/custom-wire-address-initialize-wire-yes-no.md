@@ -14,22 +14,38 @@ Custom Wire, Address and Initialize Wire Yes/No
 
 # Custom Wire, Address and Initialize Wire Yes/No
 ## Description
-Performs a basic initialization of the library which includes calling `Wire.begin()` using the default SDA and SCL pins for your board.
+Performs an initialization of the library specifying the instance of Wire to use and the address of the fuel gauge. This call allows you to also specify whether or not a call to `Wire.begin()` is made. 
+
+On boards that support cutom instance of Wire, the custom instance can be passed into the library. 
 
 ## Parameters
-None
+`wire : TwoWire*`
+
+`initializeWire : bool`
+
+`address : uint8_t`
 
 ## Returns
 `successful: bool`
 
 ## Example
-	//
-	// Initialize the fuel gauge.
-	//
-	if (FuelGauge.begin())
+	#include <Wire.h>
+	#include <MAX1704X.h>
+
+	TwoWire _wire1;
+	MAX1704X _fuelGauge = MAX1704X(MAX17043_mV); 
+
+	void setup()
 	{
-	    Serial.println("Found device.");
+	  Serial.begin(9600);
+	  _fuelGauge.begin(&_wire1, true, 0x32);
 	}
 
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
+	}
+  
 ## Notes
 None

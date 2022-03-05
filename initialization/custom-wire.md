@@ -14,7 +14,9 @@ Custom Wire -
 
 # Custom Wire
 ## Description
-Performs an initialization of the library specifying the instance of Wire to use. On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
+Performs an initialization of the library specifying the instance of Wire to use.
+
+On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
 
 ## Parameters
 `wire : TwoWire*`
