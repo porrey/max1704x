@@ -1,3 +1,4 @@
+**Home** -
 [**Constructor**](https://porrey.github.io/max1704x/constructor) - 
 [**Initialization**](https://porrey.github.io/max1704x/initialization) - 
 [**Functions**](https://porrey.github.io/max1704x/functions)
