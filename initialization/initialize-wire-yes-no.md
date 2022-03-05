@@ -29,7 +29,8 @@ Performs a basic initialization of the library buts allows you to specify whethe
 	Wire.begin();
 	
 	//
-	// Initialize the fuel gauge.
+	// Initialize the fuel gauge but 
+	// do not initialize Wire.
 	//
 	if (FuelGauge.begin(false))
 	{
