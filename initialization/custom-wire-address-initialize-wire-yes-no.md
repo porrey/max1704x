@@ -9,9 +9,9 @@
 [Custom Address and Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/custom-address-initialize-wire-yes-no) -
 [Custom Wire](https://porrey.github.io/max1704x/initialization/custom-wire) -
 [Custom Wire and Address](https://porrey.github.io/max1704x/initialization/custom-wire-address) -
-[Custom Wire, Address and Initialize Yes/No](https://porrey.github.io/max1704x/initialization/custom-wire-address-initialize-wire-yes-no)
+Custom Wire, Address and Initialize Wire Yes/No
 
-# Custom Wire, Address and Initialize Yes/No
+# Custom Wire, Address and Initialize Wire Yes/No
 ## Description
 Performs a basic initialization of the library which includes calling `Wire.begin()` using the default SDA and SCL pins for your board.
 
