@@ -22,5 +22,3 @@ bool begin(TwoWire*, bool, uint8_t);
 bool begin(int, int);
 
 bool begin(int, int, uint8_t);
-
-[Home](https://porrey.github.io/max1704x) [Functions](https://porrey.github.io/max1704x/functions)
