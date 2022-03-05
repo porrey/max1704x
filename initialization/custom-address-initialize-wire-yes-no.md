@@ -42,7 +42,8 @@ or
 	Wire.begin();
 	
 	//
-	// Initialize the fuel gauge.
+	// Initialize the fuel gauge with a device address
+	// of 0x32 and do not initialize Wire.
 	//
 	if (FuelGauge.begin(false, 0x32))
 	{
