@@ -14,7 +14,7 @@ Custom Wire -
 
 # Custom Wire
 ## Description
-Performs a basic initialization of the library specifying the instance of Wire to use. On boards that support cutom instance of Wire, the custom instance can be passed into the library.
+Performs a basic initialization of the library specifying the instance of Wire to use. On boards that support cutom instance of Wire, the custom instance can be passed into the library. This method will NOT call `begin()` on the Wire instance passed.
 
 ## Parameters
 `wire : TwoWire*`
@@ -31,15 +31,16 @@ Performs a basic initialization of the library specifying the instance of Wire t
 
 	void setup()
 	{
-	    Serial.begin(9600);
-	    _fuelGauge.begin(&_wire1);
+	  Serial.begin(9600);
+	  _wire1.begin();
+	  _fuelGauge.begin(&_wire1);
 	}
 
 	void loop()
 	{
-	    Serial.print("Battery percentage is ");
-	    Serial.print(_fuelGauge.percent());
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
 	}
-
+  
 ## Notes
 None
