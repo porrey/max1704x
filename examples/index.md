@@ -5,4 +5,9 @@
 [**Functions**](https://porrey.github.io/max1704x/functions) -
 **Examples**
 # Examples
+## Code Examples
 * [Basic Example](https://porrey.github.io/max1704x/examples/basic)
+* [Find Device](https://porrey.github.io/max1704x/examples/find-device)
+
+## Repository Examples
+* [GitHub Link](https://github.com/porrey/max1704x/tree/master/examples)
