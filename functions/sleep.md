@@ -1,8 +1,9 @@
 [**Home**](https://porrey.github.io/max1704x) -
 [**Getting Started**](https://porrey.github.io/max1704x/getting-started) -
-[**Constructor**](https://porrey.github.io/max1704x/constructor) -
-[**Initialization**](https://porrey.github.io/max1704x/initialization) -
-[**Functions**](https://porrey.github.io/max1704x/functions)
+[**Constructor**](https://porrey.github.io/max1704x/constructor) - 
+[**Initialization**](https://porrey.github.io/max1704x/initialization) - 
+[**Functions**](https://porrey.github.io/max1704x/functions) -
+[**Examples**](https://porrey.github.io/max1704x/examples)
 
 [deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound) -
 [findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice) -

@@ -1,9 +1,9 @@
 [**Home**](https://porrey.github.io/max1704x) -
 [**Getting Started**](https://porrey.github.io/max1704x/getting-started) -
-[**Constructor**](https://porrey.github.io/max1704x/constructor) -
-[**Initialization**](https://porrey.github.io/max1704x/initialization) -
-[**Functions**](https://porrey.github.io/max1704x/functions)
-
+[**Constructor**](https://porrey.github.io/max1704x/constructor) - 
+[**Initialization**](https://porrey.github.io/max1704x/initialization) - 
+[**Functions**](https://porrey.github.io/max1704x/functions) -
+[**Examples**](https://porrey.github.io/max1704x/examples)
 
 [SDA/SCL](https://porrey.github.io/max1704x/initialization/sda-scl) -
 [SDA/SCL/Address](https://porrey.github.io/max1704x/initialization/sda-scl-address)
