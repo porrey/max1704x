@@ -3,7 +3,7 @@
 [**Constructor**](https://porrey.github.io/max1704x/constructor) -
 **Initialization** -
 [**Functions**](https://porrey.github.io/max1704x/functions) -
-[**Examples**](https://porrey.github.io/max1704x/examples) -
+[**Examples**](https://porrey.github.io/max1704x/examples)
 # Initialization
 ## Standard Boards
 * [Basic Initialization](https://porrey.github.io/max1704x/initialization/basic)
