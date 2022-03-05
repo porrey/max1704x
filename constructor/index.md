@@ -31,6 +31,10 @@ The code snippet below shows how to create an instance of the library for a MAX1
 
 `MAX1704X _fuelGauge = MAX1704X(MAX17043_mV);`
 
+or
+
+`MAX1704X _fuelGauge(MAX17043_mV);`
+
 [**Next Step**](https://porrey.github.io/max1704x/initialization)
 
 ## Notes
