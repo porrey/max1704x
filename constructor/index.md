@@ -2,7 +2,8 @@
 [**Getting Started**](https://porrey.github.io/max1704x/getting-started) -
 **Constructor** -
 [**Initialization**](https://porrey.github.io/max1704x/initialization) -
-[**Functions**](https://porrey.github.io/max1704x/functions)
+[**Functions**](https://porrey.github.io/max1704x/functions) -
+[**Examples**](https://porrey.github.io/max1704x/examples)
 # Constructor
 ## Description
 The constructor creates an instance of the class. This code is usally placed at the top of your sketch before `setup()`.

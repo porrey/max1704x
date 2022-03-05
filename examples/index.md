@@ -2,8 +2,8 @@
 [**Getting Started**](https://porrey.github.io/max1704x/getting-started) -
 [**Constructor**](https://porrey.github.io/max1704x/constructor) -
 [**Initialization**](https://porrey.github.io/max1704x/initialization) -
-**Functions** -
-[**Examples**](https://porrey.github.io/max1704x/examples)
+[**Functions**](https://porrey.github.io/max1704x/functions) -
+**Examples**
 # Functions
 * [deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound)
 * [findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice)
