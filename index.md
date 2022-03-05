@@ -2,7 +2,8 @@
 [**Getting Started**](https://porrey.github.io/max1704x/getting-started) -
 [**Constructor**](https://porrey.github.io/max1704x/constructor) - 
 [**Initialization**](https://porrey.github.io/max1704x/initialization) - 
-[**Functions**](https://porrey.github.io/max1704x/functions)
+[**Functions**](https://porrey.github.io/max1704x/functions) -
+[**Examples**](https://porrey.github.io/max1704x/examples)
 # MAX1704X Library
 Provides a simple interface for monitoring battery charge levels. Works with any device using the Maxmim MAX17043 or MAX17044 chip such as the SparkFun LiPo Fuel Gauge.
 
