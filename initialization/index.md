@@ -6,12 +6,12 @@
 # Initialization
 ## Standard Boards
 * [Basic Initialization](https://porrey.github.io/max1704x/initialization/basic)
-* [Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/wire-yes-no)
+* [Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/initialize-wire-yes-no)
 * [Custom Address](https://porrey.github.io/max1704x/initialization/custom-address)
-* [Custom Address and Initialize Yes/No](https://porrey.github.io/max1704x/initialization/custom-address-initialize-yes-no)
+* [Custom Address and Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/custom-address-initialize-wire-yes-no)
 * [Custom Wire](https://porrey.github.io/max1704x/initialization/custom-wire)
 * [Custom Wire and Address](https://porrey.github.io/max1704x/initialization/custom-wire-address)
-* [Custom Wire, Address and Initialize Yes/No](https://porrey.github.io/max1704x/initialization/)
+* [Custom Wire, Address and Initialize Yes/No](https://porrey.github.io/max1704x/initialization/custom-wire-address-initialize-wire-yes-no)
 
 ## ESP Boards
 * [SDA/SCL](https://porrey.github.io/max1704x/initialization/)
