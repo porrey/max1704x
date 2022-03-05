@@ -3,7 +3,10 @@
 [**Constructor**](https://porrey.github.io/max1704x/constructor) -
 [**Initialization**](https://porrey.github.io/max1704x/initialization) -
 [**Functions**](https://porrey.github.io/max1704x/functions) -
-**Examples**
+[**Examples**](https://porrey.github.io/max1704x/examples)
+
+[Basic Example](https://porrey.github.io/max1704x/examples/basic) -
+[Find Device](https://porrey.github.io/max1704x/examples/find-device)
 # Find Device
 
 ## Description
