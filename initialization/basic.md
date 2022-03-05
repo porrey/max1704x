@@ -11,7 +11,7 @@ Basic Initialization -
 [Custom Wire and Address](https://porrey.github.io/max1704x/initialization/) -
 [Custom Wire, Address and Initialize Yes/No](https://porrey.github.io/max1704x/initialization/)
 
-#Basic Initialization
+# Basic Initialization
 ## Description
 Performs a basic initialization of the library which includes calling `Wire.begin()` using the default SDA and SCL pins for your board.
 
@@ -29,5 +29,6 @@ None
 	{
 		Serial.println("Found device.");
 	}
-#Notes
+
+## Notes
 None

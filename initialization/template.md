@@ -28,5 +28,6 @@ None
 	{
 		Serial.println("Found device.");
 	}
-#Notes
+
+## Notes
 None
