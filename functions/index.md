@@ -4,44 +4,21 @@
 [**Initialization**](https://porrey.github.io/max1704x/initialization) -
 **Functions**
 # Functions
-bool deviceFound();
-
-uint8_t findFirstDevice();
-
-uint8_t findFirstDevice(uint16_t expectedVersion);
-
-uint8_t address();
-
-void address(uint8_t);
-
-uint16_t adc();
-
-float voltage();
-
-float percent();
-
-float percentN();
-
-uint16_t version();
-
-uint8_t compensation();
-
-void compensation(uint8_t);
-
-bool sleep();
-
-bool isSleeping();
-
-bool wake();
-
-void reset();
-
-void quickstart();
-
-bool alertIsActive();
-
-void clearAlert();
-
-uint8_t getThreshold();
-
-void setThreshold(uint8_t);
+* [deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound)
+* [findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice)
+* [address()](https://porrey.github.io/max1704x/functions/address)
+* [adc()](https://porrey.github.io/max1704x/functions/adc)
+* [voltage()](https://porrey.github.io/max1704x/functions/voltage)
+* [percent()](https://porrey.github.io/max1704x/functions/percent)
+* [percentN()](https://porrey.github.io/max1704x/functions/percentN)
+* [version()](https://porrey.github.io/max1704x/functions/percentN)
+* [compensation()](https://porrey.github.io/max1704x/functions/percentN)
+* [sleep()](https://porrey.github.io/max1704x/functions/percentN)
+* [isSleeping()](https://porrey.github.io/max1704x/functions/percentN)
+* [wake()](https://porrey.github.io/max1704x/functions/percentN)
+* [reset()](https://porrey.github.io/max1704x/functions/percentN)
+* [quickstart()](https://porrey.github.io/max1704x/functions/percentN)
+* [alertIsActive()](https://porrey.github.io/max1704x/functions/percentN)
+* [clearAlert()](https://porrey.github.io/max1704x/functions/percentN)
+* [getThreshold()](https://porrey.github.io/max1704x/functions/percentN)
+* [setThreshold()](https://porrey.github.io/max1704x/functions/percentN)
