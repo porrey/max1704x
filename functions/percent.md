@@ -11,17 +11,17 @@
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
 [percentN()](https://porrey.github.io/max1704x/functions/percentN) -
-[version()](https://porrey.github.io/max1704x/functions/percentN) -
-[compensation()](https://porrey.github.io/max1704x/functions/percentN) -
-[sleep()](https://porrey.github.io/max1704x/functions/percentN) -
-[isSleeping()](https://porrey.github.io/max1704x/functions/percentN) -
-[wake()](https://porrey.github.io/max1704x/functions/percentN) -
-[reset()](https://porrey.github.io/max1704x/functions/percentN) -
-[quickstart()](https://porrey.github.io/max1704x/functions/percentN) -
-[alertIsActive()](https://porrey.github.io/max1704x/functions/percentN) -
-[clearAlert()](https://porrey.github.io/max1704x/functions/percentN) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/percentN) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/percentN)
+[version()](https://porrey.github.io/max1704x/functions/version) -
+[compensation()](https://porrey.github.io/max1704x/functions/compensation) -
+[sleep()](https://porrey.github.io/max1704x/functions/sleep) -
+[isSleeping()](https://porrey.github.io/max1704x/functions/isSleeping) -
+[wake()](https://porrey.github.io/max1704x/functions/wake) -
+[reset()](https://porrey.github.io/max1704x/functions/reset) -
+[quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
+[alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
+[clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
+[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
+[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
 
 # percent()
 ## Description
