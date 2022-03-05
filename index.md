@@ -29,35 +29,16 @@ Additionally, you will need to call the constructor on the class to create an in
 
 [Next Step](https://porrey.github.io/max1704x/constructor)
 
-## Initialization
-### Standard Boards
-bool begin();
 
-bool begin(bool);
 
-bool begin(bool, uint8_t);
 
-bool begin(uint8_t);
-
-bool begin(TwoWire*);
-
-bool begin(TwoWire*, uint8_t);
-
-bool begin(TwoWire*, bool, uint8_t);
-
+## Functions
 bool deviceFound();
 
 uint8_t findFirstDevice();
 
 uint8_t findFirstDevice(uint16_t expectedVersion);
 
-### ESP Boards
-bool begin(int, int);
-
-bool begin(int, int, uint8_t);
-
-
-## Functions
 uint8_t address();
 
 void address(uint8_t);
