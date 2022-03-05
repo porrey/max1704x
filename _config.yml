@@ -1,3 +1,3 @@
 theme: jekyll-theme-slate
 title: MAX1704X Arduino Library
-description: Provides a simple interface for monitoring battery charge levels. Works with any device using the Maxmim MAX17043 or MAX17044 chip such as the SparkFun LiPo Fuel Gauge.
+description: Arduino library for MAX17043/MAX17044 lithium ion battery fuel gauge.
