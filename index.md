@@ -1,37 +1,52 @@
-## Welcome to GitHub Pages
+# MAX1704X Library
 
-You can use the [editor on GitHub](https://github.com/porrey/max1704x/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Creating
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## MAX1704X()
+### Description
+### Syntax
+### Parameters
+float
+### Returns
+### Example
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Initialization
+### Standard Boards
+bool begin();
+bool begin(bool);
+bool begin(bool, uint8_t);
+bool begin(uint8_t);
+bool begin(TwoWire*);
+bool begin(TwoWire*, uint8_t);
+bool begin(TwoWire*, bool, uint8_t);
 
-```markdown
-Syntax highlighted code block
+bool deviceFound();
+uint8_t findFirstDevice();
+uint8_t findFirstDevice(uint16_t expectedVersion);
 
-# Header 1
-## Header 2
-### Header 3
+### ESP Boards
+#if defined(ESP8266) || defined(ESP32)
+bool begin(int, int);
+bool begin(int, int, uint8_t);
+#endif
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/porrey/max1704x/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Functions
+uint8_t address();
+void address(uint8_t);
+uint16_t adc();
+float voltage();
+float percent();
+float percentN();
+uint16_t version();
+uint8_t compensation();
+void compensation(uint8_t);
+bool sleep();
+bool isSleeping();
+bool wake();
+void reset();
+void quickstart();
+bool alertIsActive();
+void clearAlert();
+uint8_t getThreshold();
+void setThreshold(uint8_t);
