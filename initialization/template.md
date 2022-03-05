@@ -4,7 +4,7 @@
 **Initialization** - 
 [**Functions**](https://porrey.github.io/max1704x/functions)
 
-Basic Initialization -
+[Basic Initialization](https://porrey.github.io/max1704x/initialization/basic) -
 [Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/wire-yes-no) -
 [Custom Address](https://porrey.github.io/max1704x/initialization/) -
 [Custom Wire](https://porrey.github.io/max1704x/initialization/) -
