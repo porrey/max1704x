@@ -4,5 +4,5 @@
 [**Initialization**](https://porrey.github.io/max1704x/initialization) -
 [**Functions**](https://porrey.github.io/max1704x/functions) -
 **Examples**
-# Functions
+# Examples
 * [Basic Example](https://porrey.github.io/max1704x/functions/basic)
