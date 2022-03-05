@@ -14,5 +14,5 @@
 * [Custom Wire, Address and Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/custom-wire-address-initialize-wire-yes-no)
 
 ## ESP Boards
-* [SDA/SCL](https://porrey.github.io/max1704x/initialization/)
-* [SDA/SCL/Address](https://porrey.github.io/max1704x/initialization/)
+* [SDA/SCL](https://porrey.github.io/max1704x/initialization/sda-scl)
+* [SDA/SCL/Address](https://porrey.github.io/max1704x/initialization/sda-scl-address)
