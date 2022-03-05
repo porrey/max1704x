@@ -2,7 +2,8 @@
 **Getting Started** -
 [**Constructor**](https://porrey.github.io/max1704x/constructor) -
 [**Initialization**](https://porrey.github.io/max1704x/initialization) -
-[**Functions**](https://porrey.github.io/max1704x/functions)
+[**Functions**](https://porrey.github.io/max1704x/functions) -
+[**Examples**](https://porrey.github.io/max1704x/examples)
 # Getting Started
 Add the library to your Arduino IDE and then incloude it within your skethc to begin using the fuel gauge.
 
