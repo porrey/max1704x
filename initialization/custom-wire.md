@@ -26,6 +26,26 @@ On boards that support cutom instance of Wire, the custom instance can be passed
 
 ## Example
 	#include <Wire.h>
+	#include <MAX17043.h>
+
+	TwoWire _wire1;
+
+	void setup()
+	{
+	  Serial.begin(9600);
+	  _wire1.begin();
+	  FuelGauge.begin(&_wire1);
+	}
+
+	void loop()
+	{
+	  Serial.print("Battery percentage is ");
+	  Serial.print(_fuelGauge.percent());
+	}
+
+or
+
+	#include <Wire.h>
 	#include <MAX1704X.h>
 
 	TwoWire _wire1;
@@ -43,6 +63,6 @@ On boards that support cutom instance of Wire, the custom instance can be passed
 	  Serial.print("Battery percentage is ");
 	  Serial.print(_fuelGauge.percent());
 	}
-  
+	
 ## Notes
 The default fuel gauge address used by the library is 0x36 (`I2C_DEFAULT_ADDRESS`).
