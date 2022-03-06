@@ -26,7 +26,7 @@
 
 # setThreshold()
 ## Description
-Sets the alert threshold.
+Sets the alert threshold. The value can be between 1% and 32%. The default is 4%.
 
 ## Parameters
 `threshold : uint8_t`
