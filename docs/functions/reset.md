@@ -26,16 +26,16 @@
 
 # reset()
 ## Description
-
+Calling the reset() method causes the MAX17043/MAX17044 to completely reset as if power had been removed. The reset occurs when the last bit has been clocked in. The IC does not respond with an I2C ACK after this command sequence.
 
 ## Parameters
-
+None.
 
 ## Returns
-
+None.
 
 ## Example
-
+`FuelGauge.reset();`
 
 ## Notes
 None.
