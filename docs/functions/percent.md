@@ -27,7 +27,7 @@
 Gets the state of charge represented as a percentage from the SOC register of the device.
 
 ## Parameters
-**Optional** constrain : bool
+**Optional** `constrain : bool`
 
 ## Returns
 `percent : float`
