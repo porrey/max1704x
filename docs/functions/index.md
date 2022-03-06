@@ -21,5 +21,4 @@
 * [quickstart()](https://porrey.github.io/max1704x/functions/quickstart)
 * [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive)
 * [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert)
-* [getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold)
-* [setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+* [threshold()](https://porrey.github.io/max1704x/functions/threshold)

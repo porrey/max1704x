@@ -6,9 +6,9 @@
 [**Examples**](https://porrey.github.io/max1704x/examples)
 # Constructor
 ## Description
-The constructor creates an instance of the class. This code is usally placed at the top of your sketch before `setup()`.
+The constructor creates an instance of the class. This code is usually placed at the top of your sketch before `setup()`.
 
-The constructor only needs to be called when you are including `MAX1704X.H`. If you include the file `MAX17043.H` or `MAX17044.H` the constructor has lready been called in those files. You only need to use the `FuelGauge` object. You will need to call one of the [begin() methods](https://porrey.github.io/max1704x/initialization) (for example, `FuelGauge.begin()`).
+The constructor only needs to be called when you are including `MAX1704X.H`. If you include the file `MAX17043.H` or `MAX17044.H` the constructor has already been called in those files. You only need to use the `FuelGauge` object. You will need to call one of the [begin() methods](https://porrey.github.io/max1704x/initialization) (for example, `FuelGauge.begin()`).
 ## Syntax
 `MAX1704X(voltageIncrement)`
 

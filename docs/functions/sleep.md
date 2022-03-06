@@ -21,15 +21,14 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # sleep()
 ## Description
 Puts the device into sleep mode. While in Sleep mode, all IC operations are halted, and power drain of the IC is greatly reduced. After exiting Sleep mode, fuel-gauge operation continues from the point it was halted.
 
 ## Parameters
-None.
+`None`
 
 ## Returns
 `successful : bool`

@@ -21,21 +21,23 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # percent()
 ## Description
-
+Gets the state of charge represented as a percentage from the SOC register of the device.
 
 ## Parameters
-
+`None`
 
 ## Returns
-
+`percent : float`
 
 ## Example
+This snippet of code demonstrates how to get the current battery percentage and display it on the serial port.
 
+	float percent = FuelGauge.percent();
+	Serial.print("Battery is at "); Serial.print(percent); Serial.println("%");
 
 ## Notes
-None.
+This value is determined by the device and not computed as part of this library. The value is not constrained to 100%.

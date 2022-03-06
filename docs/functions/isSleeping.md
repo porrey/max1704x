@@ -21,8 +21,7 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # isSleeping()
 ## Description
@@ -30,7 +29,7 @@ Determines if the device is in sleep mode or not. Returns `true` if the device i
 
 
 ## Parameters
-None.
+`None`
 
 ## Returns
 `sleeping : bool`

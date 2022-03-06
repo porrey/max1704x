@@ -21,21 +21,20 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # findFirstDevice()
 ## Description
-
+Search the i2c bus and returns the address of the first MAX1704X device found.
 
 ## Parameters
-
+**Optional** `expectedVersion : uint16_t`
 
 ## Returns
-
+`adress : uint8_t`
 
 ## Example
-
+See the example [Find Device](https://porrey.github.io/max1704x/examples/find-device)
 
 ## Notes
 None.

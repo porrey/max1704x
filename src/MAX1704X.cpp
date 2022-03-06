@@ -72,13 +72,13 @@ bool MAX1704X::begin(uint8_t address)
 bool MAX1704X::begin(TwoWire* wire)
 {
   this->_wire = wire;
-  return this->begin();
+  return this->begin(false);
 }
 
 bool MAX1704X::begin(TwoWire* wire, uint8_t address)
 {
   this->_wire = wire;
-  return this->begin(address);
+  return this->begin(false, address);
 }
 
 bool MAX1704X::begin(TwoWire* wire, bool initializeWire, uint8_t address)
@@ -122,7 +122,7 @@ uint16_t MAX1704X::adc()
   // 12-bit ADC; Shift the result since the 4 LSB's are not used.
   //
   uint16_t registerValue = this->readRegister16(REGISTER_VCELL);
-  returnValue = registerValue  >> 4;
+  returnValue = registerValue >> 4;
 
   return returnValue;
 }
@@ -242,7 +242,7 @@ void MAX1704X::clearAlert()
   this->writeRegister16(REGISTER_CONFIG, value);
 }
 
-uint8_t MAX1704X::getThreshold()
+uint8_t MAX1704X::threshold()
 {
   //
   // Get the config register value. The last 5 bits
@@ -256,7 +256,15 @@ uint8_t MAX1704X::getThreshold()
   return configToThreshold(config & 0x001F);
 }
 
-void MAX1704X::setThreshold(uint8_t threshold)
+//
+// obsolete - will be removed in future release
+//
+uint8_t MAX1704X::getThreshold()
+{
+  return this->threshold();
+}
+
+void MAX1704X::threshold(uint8_t threshold)
 {
   //
   // Get the config register value. The last 5 bits
@@ -283,6 +291,14 @@ void MAX1704X::setThreshold(uint8_t threshold)
   // Write the new register value.
   //
   this->writeRegister16(REGISTER_CONFIG, config);
+}
+
+//
+// obsolete - will be removed in future release
+//
+void MAX1704X::setThreshold(uint8_t threshold)
+{
+  this->setThreshold(threshold);
 }
 
 uint8_t MAX1704X::thresholdToConfig(uint8_t threshold)

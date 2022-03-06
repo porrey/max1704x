@@ -5,7 +5,7 @@
 [**Functions**](https://porrey.github.io/max1704x/functions) -
 [**Examples**](https://porrey.github.io/max1704x/examples)
 
-[deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound) -
+[[deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound) -
 [findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice) -
 [address()](https://porrey.github.io/max1704x/functions/address) -
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
@@ -21,21 +21,23 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # adc()
 ## Description
-
+Reads the value from the VCELL register on the device. This value reports the 12-bit A/D measurement of battery voltage.
 
 ## Parameters
-
+`None`
 
 ## Returns
-
+`value : uint16_t`
 
 ## Example
+This snippet of code shows how to calculate the voltage of the battery using the ADC value on a one cell battery.
 
+	uint16_t value = FuelGauge.adc();
+	float voltage = value * 1.25;
 
 ## Notes
 None.

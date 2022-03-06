@@ -21,18 +21,17 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # reset()
 ## Description
 Calling the reset() method causes the MAX17043/MAX17044 to completely reset as if power had been removed. The reset occurs when the last bit has been clocked in. The IC does not respond with an I2C ACK after this command sequence.
 
 ## Parameters
-None.
+`None`
 
 ## Returns
-None.
+`None`
 
 ## Example
 This snippet of code shows how to reset the device and wait for it to complete.

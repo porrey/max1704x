@@ -21,18 +21,17 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # clearAlert()
 ## Description
 Clears the active alert on the device.
 
 ## Parameters
-None.
+`None`
 
 ## Returns
-None.
+`None`
 
 ## Example
 This code snippet checks the status of the alert and then clears it if it is active.
@@ -45,4 +44,4 @@ This code snippet checks the status of the alert and then clears it if it is act
 ## Notes
 The MAX17043/MAX17044 have an interrupt feature that alerts a host microprocessor whenever the cell's state of charge, as defined by the SOC register, falls below a predefined alert threshold set at address 0Dh of the CONFIG register. When an alert is triggered, the IC drives the ALRT pin to logic-low and sets the ALRT bit in the CONFIG register to logic 1. The ALRT pin remains logic-low until the host software writes the ALRT bit to logic 0 to clear the interrupt. Clearing the ALRT bit while SOC is below the alert threshold does not generate another interrupt. The SOC register must first rise above and then fall below the alert threshold value before another interrupt is generated. Note that the alert function is not disabled at IC powerup. If the first SOC calculation is below the threshold setting, an interrupt is generated. Entering Sleep mode does not clear the interrupt.
 
-See also [getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold), [setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold), [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive)
+See also [threshold()](https://porrey.github.io/max1704x/functions/threshold), [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive)

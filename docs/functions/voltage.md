@@ -21,21 +21,23 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # voltage()
 ## Description
-
+Computes the voltage based on the current VCELL (ADC) value using the voltage increments passed into the library in the constructor.
 
 ## Parameters
-
+`None`
 
 ## Returns
-
+`voltage : float`
 
 ## Example
+This code snippet demonstrates hwo to get the voltage and display it on the serial port.
 
+	float voltage = FuelGauge.voltage();
+	Serial.print("The battery voltage is "); Serial.println(voltage);
 
 ## Notes
 None.

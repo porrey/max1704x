@@ -5,26 +5,26 @@
 [**Functions**](https://porrey.github.io/max1704x/functions) -
 [**Examples**](https://porrey.github.io/max1704x/examples)
 # Getting Started
-Add the library to your Arduino IDE and then incloude it within your skethc to begin using the fuel gauge.
+Add the library to your Arduino IDE and then include it within your sketch to begin using the fuel gauge.
 
 ## Adding the Library
-In the Arduino IDE, click the **Sketch** menu and choose **Include Library** and then **Manage Libraries...**. In the search box type **MAX1704X**. Highlight the library and clikc the **Install** button.
+In the Arduino IDE, click the **Sketch** menu and choose **Include Library** and then **Manage Libraries...**. In the search box type **MAX1704X**. Highlight the library and click the **Install** button.
 ## Include the Library
 Using the library requires adding a the library header file to your sketch.
 
-If you are using the MAX17043 (one cell battery) device, then add the line shonw below to the top of your sketch.
+If you are using the MAX17043 (one cell battery) device, then add the line shown below to the top of your sketch.
 
 `#include "MAX17043.h"`
 
 [**Next Step**](https://porrey.github.io/max1704x/initialization)
 
-If you are using the MAX17044 (two cell battery) device, then add the line shonw below to the top of your sketch.
+If you are using the MAX17044 (two cell battery) device, then add the line shown below to the top of your sketch.
 
 `#include "MAX17044.h"`
 
 [**Next Step**](https://porrey.github.io/max1704x/initialization)
 
-If you are wish to initalize the library yourself, then add the line shonw below to the top of your sketch.
+If you are wish to initialize the library yourself, then add the line shown below to the top of your sketch.
 
 `#include "MAX1704X.h"`
 

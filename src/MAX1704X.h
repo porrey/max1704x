@@ -81,11 +81,17 @@ class MAX1704X
     void quickstart();
     bool alertIsActive();
     void clearAlert();
-    uint8_t getThreshold();
-    void setThreshold(uint8_t);
+    uint8_t threshold();
+    void threshold(uint8_t);
     bool deviceFound();
     uint8_t findFirstDevice();
     uint8_t findFirstDevice(uint16_t expectedVersion);
+
+    //
+    // obsolete - will be removed in future release
+    //
+    uint8_t getThreshold();
+    void setThreshold(uint8_t);
     
   protected:
     TwoWire *_wire;
