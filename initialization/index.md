@@ -5,7 +5,7 @@
 [**Functions**](https://porrey.github.io/max1704x/functions) -
 [**Examples**](https://porrey.github.io/max1704x/examples)
 # Initialization
-Library initialization is accomplished via the `begin()` method. This libray supports multiple `begin()` statements depending on your needs. Select an option below to see the details of each option.
+Library initialization is accomplished via the `begin()` method. This library supports multiple `begin()` statements depending on your needs. Select an option below to see the details of each option.
 ## Standard Boards
 * [Basic Initialization](https://porrey.github.io/max1704x/initialization/basic)
 * [Initialize Wire Yes/No](https://porrey.github.io/max1704x/initialization/initialize-wire-yes-no)
