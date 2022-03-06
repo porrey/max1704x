@@ -25,7 +25,7 @@
 [setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
 
 # wake()
-Takes the device out sleep mode.
+Takes the device out sleep mode. After exiting Sleep mode, fuel-gauge operation continues from the point it was halted.
 
 ## Parameters
 None.
