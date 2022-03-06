@@ -26,16 +26,22 @@
 
 # quickstart()
 ## Description
-
+A quick-start allows the MAX17043/MAX17044 to restart fuel-gauge calculations in the same manner as initial power-up of the IC. For example, if an application’s power-up sequence is exceedingly noisy such that excess error is introduced into the IC’s “first guess” of SOC, the host can issue a quick-start to reduce the error. A quick-start is initiated by a rising edge on the QSTRT pin, or through software by calling the quickstart() method.
 
 ## Parameters
-
+None.
 
 ## Returns
-
+None.
 
 ## Example
-
+    //
+    // Issue a quickstart command and wait
+    // for the device to be ready.
+    //
+    Serial.println("Initiating quickstart mode...");
+    FuelGauge.quickstart();
+    delay(125);
 
 ## Notes
 None.
