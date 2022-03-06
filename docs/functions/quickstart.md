@@ -35,6 +35,8 @@ None.
 None.
 
 ## Example
+This snippet of code shows how to reset the quickstart and wait for it to complete.
+
     //
     // Issue a quickstart command and wait
     // for the device to be ready.
