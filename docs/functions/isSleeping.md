@@ -26,16 +26,26 @@
 
 # isSleeping()
 ## Description
+Determines if the device is in sleep mode or not. Returns `true` if the device is sleeping; false otherwise.
 
 
 ## Parameters
-
+None.
 
 ## Returns
-
+`sleeping : bool`
 
 ## Example
+The sample code below demonstrates how to check if the device is in sleep mode or not.
 
+    if (FuelGauge.isSleeping())
+    {
+      Serial.println("Fuel Gauge is in sleep mode.");
+    }
+    else
+    {
+      Serial.println("Fuel Gauge is not in sleep mode.");
+    }
 
 ## Notes
-None.
+Entering Sleep mode does not clear the interrupt. See also [wake()](https://porrey.github.io/max1704x/functions/wake) and [sleep()](https://porrey.github.io/max1704x/functions/sleep).
