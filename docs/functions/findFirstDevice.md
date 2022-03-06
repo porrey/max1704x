@@ -24,7 +24,7 @@
 
 # findFirstDevice()
 ## Description
-Search the i2c bus and returns the address of the first MAX1704X device found.
+Searches the i2c bus and returns the address of the first MAX1704X device found.
 
 ## Parameters
 **Optional** `expectedVersion : uint16_t`
