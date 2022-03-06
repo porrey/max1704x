@@ -35,7 +35,12 @@ None.
 None.
 
 ## Example
-`FuelGauge.reset();`
+    //
+    // Reset the device.
+    //
+    Serial.println("Resetting device...");
+    FuelGauge.reset();
+    delay(250);
 
 ## Notes
 None.
