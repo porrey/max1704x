@@ -35,6 +35,8 @@ None.
 None.
 
 ## Example
+This snippet of code shows how to reset the device and wait for it to complete.
+
     //
     // Reset the device.
     //
