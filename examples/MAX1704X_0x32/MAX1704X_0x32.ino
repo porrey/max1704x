@@ -249,14 +249,14 @@ void clearAlert()
 
 void incrementThreshold()
 {
-  uint8_t threshold = _fuelGauge.getThreshold();
-  _fuelGauge.setThreshold(++threshold);
-  Serial.print("The alert threshold has been incremented to "); Serial.print(_fuelGauge.getThreshold()); Serial.println(",");
+  uint8_t threshold = _fuelGauge.threshold();
+  _fuelGauge.threshold(++threshold);
+  Serial.print("The alert threshold has been incremented to "); Serial.print(_fuelGauge.threshold()); Serial.println(",");
 }
 
 void decrementThreshold()
 {
-  uint8_t threshold = _fuelGauge.getThreshold();
-  _fuelGauge.setThreshold(--threshold);
-  Serial.print("The alert threshold has been decremented to "); Serial.print(_fuelGauge.getThreshold()); Serial.println(",");
+  uint8_t threshold = _fuelGauge.threshold();
+  _fuelGauge.threshold(--threshold);
+  Serial.print("The alert threshold has been decremented to "); Serial.print(_fuelGauge.threshold()); Serial.println(",");
 }

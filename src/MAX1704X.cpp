@@ -156,13 +156,13 @@ float MAX1704X::percent()
   return percentage + fraction;
 }
 
-float MAX1704X::percent(bool constrain)
+float MAX1704X::percent(bool constrainPercent)
 {
   float returnValue = this->percent();
 
-  if (constrain)
+  if (constrainPercent)
   {
-    returnValue= constrain(percent, 0, 100);
+    returnValue = constrain(returnValue, (float)0, (float)100);
   }
 
   return returnValue;

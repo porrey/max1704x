@@ -84,8 +84,8 @@ void setup()
 void loop()
 {
   //
-  // percentN() constrains the percentage between 0 and 100%.
+  // percent(true) constrains the percentage between 0 and 100%.
   //
-  Serial.print("Battery Percent is "); Serial.print(_fuelGauge.percentN()); Serial.println("%");
+  Serial.print("Battery Percent is "); Serial.print(_fuelGauge.percent(true)); Serial.println("%");
   delay(2000);
 }
