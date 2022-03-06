@@ -11,7 +11,6 @@
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
-[percentN()](https://porrey.github.io/max1704x/functions/percentN) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
 [compensation()](https://porrey.github.io/max1704x/functions/compensation) -
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
@@ -21,21 +20,29 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # deviceFound()
 ## Description
-
+Determines if the device has been found on the i2c bus with the specified address.
 
 ## Parameters
-
+`None`
 
 ## Returns
-
+`found : bool`
 
 ## Example
+This snippet of code demonstrates how this method can be used to detect the device on the bus.
 
+	if (FuelGauge.deviceFound())
+	{
+	    Serial.println("The device has been found.");
+	}
+	else
+	{
+	    Serial.println("No device found.")
+	}
 
 ## Notes
 None.

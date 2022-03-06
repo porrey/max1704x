@@ -11,7 +11,6 @@
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
-[percentN()](https://porrey.github.io/max1704x/functions/percentN) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
 [compensation()](https://porrey.github.io/max1704x/functions/compensation) -
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
@@ -21,21 +20,20 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # findFirstDevice()
 ## Description
-
+Searches the i2c bus and returns the address of the first MAX1704X device found.
 
 ## Parameters
-
+**Optional** `expectedVersion : uint16_t`
 
 ## Returns
-
+`adress : uint8_t`
 
 ## Example
-
+See the example [Find Device](https://porrey.github.io/max1704x/examples/find-device)
 
 ## Notes
 None.

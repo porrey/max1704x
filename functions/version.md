@@ -11,7 +11,6 @@
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
-[percentN()](https://porrey.github.io/max1704x/functions/percentN) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
 [compensation()](https://porrey.github.io/max1704x/functions/compensation) -
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
@@ -21,21 +20,23 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # version()
 ## Description
-
+Gets the IC version.
 
 ## Parameters
-
+`None`
 
 ## Returns
-
+`version : uint16_t`
 
 ## Example
+This snippet of code demonstrates how to get and display the IC version on the serial port.
 
+	uint16_t version = FuelGauge.verion();
+	Serial.print("Version is 0x"); Serial.println(version, HEX);
 
 ## Notes
 None.

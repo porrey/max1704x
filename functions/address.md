@@ -11,7 +11,6 @@
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
-[percentN()](https://porrey.github.io/max1704x/functions/percentN) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
 [compensation()](https://porrey.github.io/max1704x/functions/compensation) -
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
@@ -21,21 +20,30 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # address()
 ## Description
-
+Gets/sets the i2c device address.
 
 ## Parameters
+**Get:** `None`
 
+**Set:** `address :uint8_t`
 
 ## Returns
+**Get:** `address :uint8_t`
 
+**Set:** `None`
 
 ## Example
+This snippet of code shows how to get the device address.
 
+	uint8_t address = FuelGauge.address();
+	
+This snippet of code shows how to set the device address.
+
+	FuelGauge.address(0x032);
 
 ## Notes
 None.

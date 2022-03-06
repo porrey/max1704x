@@ -22,21 +22,31 @@
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
 [threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
-# voltage()
+# getThreshold()
 ## Description
-Computes the voltage based on the current VCELL (ADC) value using the voltage increments passed into the library in the constructor.
+Gets/sets the alert threshold. The value can be between 1% and 32%. The default is 4%.
 
 ## Parameters
-`None`
+**Get:** `None`
+
+**Set:** `threshold :uint8_t`
 
 ## Returns
-`voltage : float`
+**Get** `threshold : uint8_t`
+
+**Set** `None`
 
 ## Example
-This code snippet demonstrates hwo to get the voltage and display it on the serial port.
+This snippet of code increments the current threshold value.
 
-	float voltage = FuelGauge.voltage();
-	Serial.print("The battery voltage is "); Serial.println(voltage);
+	void incrementThreshold()
+	{
+	  uint8_t threshold = FuelGauge.threshold();
+	  FuelGauge.threshold(++threshold);
+	  Serial.print("The alert threshold has been incremented to "); Serial.print(FuelGauge.threshold()); Serial.println(",");
+	}
 
 ## Notes
-None.
+The MAX17043/MAX17044 have an interrupt feature that alerts a host microprocessor whenever the cell's state of charge, as defined by the SOC register, falls below a predefined alert threshold set at address 0Dh of the CONFIG register. When an alert is triggered, the IC drives the ALRT pin to logic-low and sets the ALRT bit in the CONFIG register to logic 1. The ALRT pin remains logic-low until the host software writes the ALRT bit to logic 0 to clear the interrupt. Clearing the ALRT bit while SOC is below the alert threshold does not generate another interrupt. The SOC register must first rise above and then fall below the alert threshold value before another interrupt is generated. Note that the alert function is not disabled at IC powerup. If the first SOC calculation is below the threshold setting, an interrupt is generated. Entering Sleep mode does not clear the interrupt.
+
+See also [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive), [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert)

@@ -11,7 +11,6 @@
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
-[percentN()](https://porrey.github.io/max1704x/functions/percentN) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
 [compensation()](https://porrey.github.io/max1704x/functions/compensation) -
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
@@ -21,21 +20,30 @@
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
-[getThreshold()](https://porrey.github.io/max1704x/functions/getThreshold) -
-[setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
+[threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
 # isSleeping()
 ## Description
+Determines if the device is in sleep mode or not. Returns `true` if the device is sleeping; false otherwise.
 
 
 ## Parameters
-
+`None`
 
 ## Returns
-
+`sleeping : bool`
 
 ## Example
+The sample code below demonstrates how to check if the device is in sleep mode or not.
 
+    if (FuelGauge.isSleeping())
+    {
+      Serial.println("Fuel Gauge is in sleep mode.");
+    }
+    else
+    {
+      Serial.println("Fuel Gauge is not in sleep mode.");
+    }
 
 ## Notes
-None.
+Entering Sleep mode does not clear the interrupt. See also [wake()](https://porrey.github.io/max1704x/functions/wake) and [sleep()](https://porrey.github.io/max1704x/functions/sleep).

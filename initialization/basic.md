@@ -18,7 +18,7 @@ Basic Initialization -
 Performs a basic initialization of the library which includes calling `Wire.begin()` using the default SDA and SCL pins for your board.
 
 ## Parameters
-None
+`None`
 
 ## Returns
 `successful: bool`
