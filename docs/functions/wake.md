@@ -25,17 +25,34 @@
 [setThreshold()](https://porrey.github.io/max1704x/functions/setThreshold)
 
 # wake()
-## Description
-
+Takes the device out sleep mode.
 
 ## Parameters
-
+None.
 
 ## Returns
-
+`successful : bool`
 
 ## Example
+The sample code below demonstrates how to check if the device is in sleep mode and then puts it in sleep mode if it is not.
 
+    if (FuelGauge.isSleeping())
+    {
+      FuelGauge.wake();
+    
+      if (!FuelGauge.isSleeping())
+      {
+    	Serial.println("Fuel Gauge has been taken out of sleep mode.");
+      }
+      else
+      {
+    	Serial.println("Fuel Gauge failed to be taken out of sleep mode.");
+      }
+    }
+    else
+    {
+      Serial.println("Fuel Gauge is not in sleep mode.");
+    }
 
 ## Notes
-None.
+See also [sleep()](https://porrey.github.io/max1704x/functions/sleep) and [isSleeping()](https://porrey.github.io/max1704x/functions/isSleeping).
