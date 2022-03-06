@@ -70,7 +70,7 @@ class MAX1704X
     uint16_t adc();
     float voltage();
     float percent();
-    float percentN();
+    float percent(bool constrain);
     uint16_t version();
     uint8_t compensation();
     void compensation(uint8_t);

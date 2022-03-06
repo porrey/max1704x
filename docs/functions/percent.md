@@ -11,7 +11,6 @@
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
-[percentN()](https://porrey.github.io/max1704x/functions/percentN) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
 [compensation()](https://porrey.github.io/max1704x/functions/compensation) -
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
@@ -28,7 +27,7 @@
 Gets the state of charge represented as a percentage from the SOC register of the device.
 
 ## Parameters
-`None`
+**Optional** constrain : bool
 
 ## Returns
 `percent : float`
@@ -40,4 +39,6 @@ This snippet of code demonstrates how to get the current battery percentage and 
 	Serial.print("Battery is at "); Serial.print(percent); Serial.println("%");
 
 ## Notes
-This value is determined by the device and not computed as part of this library. The value is not constrained to 100%.
+This value is determined by the device and not computed as part of this library.
+
+If `constrain` is true, the percent returned will be constrained bewtween 0% and 100%. The default is false.

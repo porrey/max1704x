@@ -156,10 +156,16 @@ float MAX1704X::percent()
   return percentage + fraction;
 }
 
-float MAX1704X::percentN()
+float MAX1704X::percent(bool constrain)
 {
-  float percent = this->percent();
-  return constrain(percent, 0, 100);
+  float returnValue = this->percent();
+
+  if (constrain)
+  {
+    returnValue= constrain(percent, 0, 100);
+  }
+
+  return returnValue;
 }
 
 uint16_t MAX1704X::version()
