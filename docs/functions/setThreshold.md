@@ -35,6 +35,8 @@ Sets the alert threshold.
 None.
 
 ## Example
+This snippet of code increments the current threshold value.
+
 	void incrementThreshold()
 	{
 	  uint8_t threshold = FuelGauge.getThreshold();
