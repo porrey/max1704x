@@ -22,7 +22,7 @@
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
 [threshold()](https://porrey.github.io/max1704x/functions/threshold)
 
-# getThreshold()
+# threshold()
 ## Description
 Gets/sets the alert threshold. The value can be between 1% and 32%. The default is 4%.
 
