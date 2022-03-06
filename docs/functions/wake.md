@@ -42,16 +42,16 @@ The sample code below demonstrates how to check if the device is in sleep mode a
     
       if (!FuelGauge.isSleeping())
       {
-    	Serial.println("Fuel Gauge has been taken out of sleep mode.");
+    	Serial.println("Fuel Gauge is now awake.");
       }
       else
       {
-    	Serial.println("Fuel Gauge failed to be taken out of sleep mode.");
+    	Serial.println("Failed to wake Fuel Gauge.");
       }
     }
     else
     {
-      Serial.println("Fuel Gauge is not in sleep mode.");
+      Serial.println("Fuel Gauge is already awake.");
     }
 
 ## Notes
