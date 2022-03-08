@@ -9,7 +9,7 @@
 [findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice) -
 [address()](https://porrey.github.io/max1704x/functions/address) -
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
-[voltage()](https://porrey.github.io/max1704x/functions/voltage) -
+voltage() -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
 [compensation()](https://porrey.github.io/max1704x/functions/compensation) -

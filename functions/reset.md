@@ -16,7 +16,7 @@
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
 [isSleeping()](https://porrey.github.io/max1704x/functions/isSleeping) -
 [wake()](https://porrey.github.io/max1704x/functions/wake) -
-[reset()](https://porrey.github.io/max1704x/functions/reset) -
+reset() -
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
 [alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -

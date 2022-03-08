@@ -18,7 +18,7 @@
 [wake()](https://porrey.github.io/max1704x/functions/wake) -
 [reset()](https://porrey.github.io/max1704x/functions/reset) -
 [quickstart()](https://porrey.github.io/max1704x/functions/quickstart) -
-[alertIsActive()](https://porrey.github.io/max1704x/functions/alertIsActive) -
+alertIsActive() -
 [clearAlert()](https://porrey.github.io/max1704x/functions/clearAlert) -
 [threshold()](https://porrey.github.io/max1704x/functions/threshold)
 

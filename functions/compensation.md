@@ -12,7 +12,7 @@
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
 [version()](https://porrey.github.io/max1704x/functions/version) -
-[compensation()](https://porrey.github.io/max1704x/functions/compensation) -
+compensation() -
 [sleep()](https://porrey.github.io/max1704x/functions/sleep) -
 [isSleeping()](https://porrey.github.io/max1704x/functions/isSleeping) -
 [wake()](https://porrey.github.io/max1704x/functions/wake) -

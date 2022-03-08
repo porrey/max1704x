@@ -6,7 +6,7 @@
 [**Examples**](https://porrey.github.io/max1704x/examples)
 
 [deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound) -
-[findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice) -
+findFirstDevice() -
 [address()](https://porrey.github.io/max1704x/functions/address) -
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -

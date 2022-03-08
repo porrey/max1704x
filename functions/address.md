@@ -7,7 +7,7 @@
 
 [deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound) -
 [findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice) -
-[address()](https://porrey.github.io/max1704x/functions/address) -
+address() -
 [adc()](https://porrey.github.io/max1704x/functions/adc) -
 [voltage()](https://porrey.github.io/max1704x/functions/voltage) -
 [percent()](https://porrey.github.io/max1704x/functions/percent) -
