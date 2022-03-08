@@ -5,7 +5,7 @@
 [**Functions**](https://porrey.github.io/max1704x/functions) -
 [**Examples**](https://porrey.github.io/max1704x/examples)
 
-[[deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound) -
+[deviceFound()](https://porrey.github.io/max1704x/functions/deviceFound) -
 [findFirstDevice()](https://porrey.github.io/max1704x/functions/findFirstDevice) -
 [address()](https://porrey.github.io/max1704x/functions/address) -
 adc() -
