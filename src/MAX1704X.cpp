@@ -66,7 +66,7 @@ bool MAX1704X::begin(bool initializeWire, uint8_t address)
 
 bool MAX1704X::begin(uint8_t address)
 {
-  this->begin(true, address);
+  return this->begin(true, address);
 }
 
 bool MAX1704X::begin(TwoWire* wire)
