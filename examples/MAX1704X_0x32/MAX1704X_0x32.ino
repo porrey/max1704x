@@ -1,5 +1,5 @@
 /*
-   MAX1704X Arduino Library for MAX17043 and MAX17044 Fuel Gauge.
+   MAX1704X Arduino Library for MAX17043/44 and MAX17048/49 Fuel Gauge.
 
    Copyright © 2018-2022 Daniel Porrey. All Rights Reserved.
    https://github.com/porrey/max1704x
