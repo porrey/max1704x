@@ -50,6 +50,9 @@
 
 #define MAX17043_mV          1.25
 #define MAX17044_mV          2.50
+#define MAX17048_mV          1.25
+#define MAX17049_mV          2.50
+
 class MAX1704X
 {
   public:
