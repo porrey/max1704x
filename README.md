@@ -19,4 +19,4 @@ For an example of the **MAX17048** device on a breakout board see the [Adafruit 
 ![](https://cdn-shop.adafruit.com/310x233/5580-06.jpg)
 
 ## Amazon Boards
-The **MAX17043** is also available on breakout boards from [Amazon](https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=max17043&rh=i%3Aaps%2Ck%3Amax17043). Be cautious when ordering these from unknown suppliers. After reading on various forums that some of these do not work properly, I decided to order a clone. My experience was exactly as described by others - they simply do not work! I recommend ordering from SparkFun.
+The **MAX17043** is also available on breakout boards from [Amazon](https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=max17043&rh=i%3Aaps%2Ck%3Amax17043). Be cautious when ordering these from unknown suppliers. After reading on various forums that some of these do not work properly, I decided to order a clone. My experience was exactly as described by others - they simply do not work! I recommend ordering from SparkFun or Adafruit.
