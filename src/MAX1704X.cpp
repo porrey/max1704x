@@ -304,7 +304,7 @@ void MAX1704X::threshold(uint8_t threshold)
 //
 void MAX1704X::setThreshold(uint8_t threshold)
 {
-  this->setThreshold(threshold);
+  this->threshold(threshold);
 }
 
 uint8_t MAX1704X::thresholdToConfig(uint8_t threshold)
